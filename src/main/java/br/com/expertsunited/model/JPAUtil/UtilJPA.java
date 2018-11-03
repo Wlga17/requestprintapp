@@ -9,13 +9,15 @@ public class UtilJPA {
 	private static EntityManagerFactory emf;
 	
 	public static void createEntityManagerFactory() {
-		if(emf == null)
-		emf = Persistence.createEntityManagerFactory("requestprint");
+		if(emf == null) {
+			emf = Persistence.createEntityManagerFactory("requestprint");
+		}
 	}
 	
 	public static EntityManager getEntityManager() {
-		if(emf == null)
+		if(emf == null) {
 			createEntityManagerFactory();
+		}
 		return emf.createEntityManager();
 	}
 	
