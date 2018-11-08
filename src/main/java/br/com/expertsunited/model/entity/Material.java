@@ -2,12 +2,12 @@ package br.com.expertsunited.model.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Material implements Serializable {
@@ -17,9 +17,10 @@ public class Material implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String nome;
-	@OneToOne(cascade=CascadeType.ALL)
+	@ManyToOne
+	@JoinColumn(name="categoria", nullable = false)
 	private Categoria categoria;
-
+	
 	public Material() {
 		// TODO Auto-generated constructor stub
 	}

@@ -2,12 +2,12 @@ package br.com.expertsunited.model.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
+
 
 @Entity
 public class Categoria implements Serializable {
@@ -17,8 +17,7 @@ public class Categoria implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String nome;
-	@OneToOne(mappedBy="categoria",
-			  cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="categoria")
 	private Material material;
 	
 	public Categoria() {
@@ -28,7 +27,7 @@ public class Categoria implements Serializable {
 	public int getId() {
 		return id;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -39,5 +38,13 @@ public class Categoria implements Serializable {
 	
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public Material getMaterial() {
+		return material;
+	}
+
+	public void setMaterial(Material material) {
+		this.material = material;
 	}
 }
