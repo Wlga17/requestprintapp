@@ -17,7 +17,7 @@ public class Solicitacao implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int id;
 	private String titulo;
 	@Column(name="data_solicitacao")
@@ -34,8 +34,7 @@ public class Solicitacao implements Serializable {
 	private Cliente cliente;
 	@OneToMany(mappedBy="solicitacao")
 	private List<Proposta> proposta;
-	@OneToMany(mappedBy="materialSolicitacao")
-	@Column(name="mat_solicitacao")
+	@OneToMany(mappedBy="solicitacao")
 	private List<MaterialSolicitacao> materialSolicitacao;
 	
 	public Solicitacao() {

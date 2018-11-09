@@ -3,7 +3,6 @@ package br.com.expertsunited.model.entity;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,16 +17,15 @@ public class Material implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int id;
 	private String nome;
 	@ManyToOne
 	@JoinColumn(name="categoria", nullable = false)
 	private Categoria categoria;
-	@OneToMany(mappedBy="materialSolicitacao")
-	@Column(name="mat_solicitacao")
+	@OneToMany(mappedBy="material")
 	private List<MaterialSolicitacao> materialSolicitacao;
-	@ManyToMany(mappedBy="grafica")
+	@ManyToMany(mappedBy="material")
 	private List<Grafica> grafica;
 
 	public Material() {
