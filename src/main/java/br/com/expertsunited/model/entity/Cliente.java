@@ -1,6 +1,7 @@
 package br.com.expertsunited.model.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,10 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
 
 @Entity
-@Inheritance(strategy=InheritanceType.JOINED)
-public class Cliente implements Serializable{
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+public class Cliente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -23,6 +25,8 @@ public class Cliente implements Serializable{
 	private String login;
 	private String senha;
 	private boolean fornecedor;
+	@OneToMany(mappedBy="cliente")
+	private List<Solicitacao> solicitacao;
 	
 	public Cliente() {
 		// TODO Auto-generated constructor stub
@@ -83,5 +87,12 @@ public class Cliente implements Serializable{
 	public void setFornecedor(boolean fornecedor) {
 		this.fornecedor = fornecedor;
 	}
-	
+
+	public List<Solicitacao> getSolicitacao() {
+		return solicitacao;
+	}
+
+	public void setSolicitacao(List<Solicitacao> solicitacao) {
+		this.solicitacao = solicitacao;
+	}
 }

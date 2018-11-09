@@ -1,11 +1,16 @@
 package br.com.expertsunited.model.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Grafica implements Serializable {
@@ -22,7 +27,14 @@ public class Grafica implements Serializable {
 	private String senha;
 	private boolean fornecedor;
 	private int avaliacao;
-	
+	@OneToMany(mappedBy="grafica")
+	private List<Proposta> proposta;
+	@ManyToMany
+	@JoinTable(name="grafica_material",
+	            joinColumns={@JoinColumn(name="grafica_id")},
+	            inverseJoinColumns={@JoinColumn(name="material_id")})
+	private List<Material> material;
+
 	public Grafica() {
 		// TODO Auto-generated constructor stub
 	}
@@ -97,5 +109,21 @@ public class Grafica implements Serializable {
 	
 	public void setAvaliacao(int avaliacao) {
 		this.avaliacao = avaliacao;
+	}
+	
+	public List<Proposta> getProposta() {
+		return proposta;
+	}
+
+	public void setProposta(List<Proposta> proposta) {
+		this.proposta = proposta;
+	}
+
+	public List<Material> getMaterial() {
+		return material;
+	}
+
+	public void setMaterial(List<Material> material) {
+		this.material = material;
 	}
 }
