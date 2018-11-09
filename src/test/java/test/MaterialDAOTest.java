@@ -15,10 +15,10 @@ public class MaterialDAOTest {
 	
 	@Test
 	public void createTest() {
-		Categoria categoria = eManager.find(Categoria.class, 1);
+		Categoria categoria = eManager.find(Categoria.class, 2);
 		Material material = new Material();
 		
-		material.setNome("Panfleto 15x21cm - couchê 90g - 4x0");
+		material.setNome("Laminado Fosco - couchê 250g - 4x4");
 		material.setCategoria(categoria);
 		
 		materialDao.create(material);

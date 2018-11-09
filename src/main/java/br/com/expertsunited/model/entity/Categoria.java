@@ -1,6 +1,7 @@
 package br.com.expertsunited.model.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +19,7 @@ public class Categoria implements Serializable {
 	private int id;
 	private String nome;
 	@OneToMany(mappedBy="categoria")
-	private Material material;
+	private List<Material> material;
 	
 	public Categoria() {
 		// TODO Auto-generated constructor stub
@@ -39,12 +40,12 @@ public class Categoria implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	public Material getMaterial() {
+
+	public List<Material> getMaterial() {
 		return material;
 	}
 
-	public void setMaterial(Material material) {
+	public void setMaterial(List<Material> material) {
 		this.material = material;
 	}
 }

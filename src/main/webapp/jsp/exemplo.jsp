@@ -9,6 +9,5 @@
 <body>
 
 <script type="text/javascript"></script>
-<jsp:include page=""></jsp:include>
 </body>
 </html>
