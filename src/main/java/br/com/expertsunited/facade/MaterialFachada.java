@@ -58,7 +58,7 @@ public class MaterialFachada {
 	/**
      * Retorna a lista de todos os materiais
      * @return Lista de Material
-     * @throws Exception.
+     * @throws Exception
      */
 	
 	public List<Material> getListMaterial() throws Exception{
