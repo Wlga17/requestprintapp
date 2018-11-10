@@ -36,6 +36,12 @@ public class ClienteNegocio {
 		if(cliente.getTelefone().equals("") == true || cliente.getTelefone() == null) {
 			throw new Exception("Telefone do cliente em branco");
 		}
+		if(cliente.getLogin().equals("") == true || cliente.getLogin() == null) {
+			throw new Exception("Login do cliente em branco");
+		}
+		if(cliente.getSenha().equals("") == true || cliente.getSenha() == null) {
+			throw new Exception("Senha do cliente em branco");
+		}
 	}
 		
 	public void inserirClienteCF(ClienteFisico cliente) throws Exception{
@@ -100,6 +106,12 @@ public class ClienteNegocio {
 		}
 		if(cliente.getTelefone().equals("") == true || cliente.getTelefone() == null) {
 			throw new Exception("Telefone do cliente em branco");
+		}
+		if(cliente.getLogin().equals("") == true || cliente.getLogin() == null) {
+			throw new Exception("Login do cliente em branco");
+		}
+		if(cliente.getSenha().equals("") == true || cliente.getSenha() == null) {
+			throw new Exception("Senha do cliente em branco");
 		}
 	}
 	

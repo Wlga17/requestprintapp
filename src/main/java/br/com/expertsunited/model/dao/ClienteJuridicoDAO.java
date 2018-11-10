@@ -11,7 +11,7 @@ import br.com.expertsunited.model.entity.ClienteJuridico;
 
 public class ClienteJuridicoDAO implements IClienteJuridicoDAO{
 
-	private final EntityManager em = UtilJPA.getEntityManager();
+	EntityManager eManager = UtilJPA.getEntityManager();
 	
 	/**
 	 * Método para persistir um novo objeto ClienteJuridico
@@ -19,13 +19,13 @@ public class ClienteJuridicoDAO implements IClienteJuridicoDAO{
 	 */
 	public void create(ClienteJuridico cliente) {
 		try {
-			em.getTransaction().begin();
-			em.persist(cliente);
-			em.getTransaction().commit();
+			eManager.getTransaction().begin();
+			eManager.persist(cliente);
+			eManager.getTransaction().commit();
 		}catch(Exception ex) {
-			em.getTransaction().rollback();
+			eManager.getTransaction().rollback();
 		}finally {
-			em.close();
+			eManager.close();
 		}
 	}
 
@@ -35,13 +35,13 @@ public class ClienteJuridicoDAO implements IClienteJuridicoDAO{
 	 */
 	public void update(ClienteJuridico cliente) {
 		try {
-			em.getTransaction().begin();
-			em.merge(cliente);
-			em.getTransaction().commit();
+			eManager.getTransaction().begin();
+			eManager.merge(cliente);
+			eManager.getTransaction().commit();
 		}catch (Exception ex) {
-			em.getTransaction().rollback();
+			eManager.getTransaction().rollback();
 		}finally {
-			em.close();
+			eManager.close();
 		}
 	}
 
@@ -51,14 +51,14 @@ public class ClienteJuridicoDAO implements IClienteJuridicoDAO{
 	 */
 	public void remove(ClienteJuridico cliente) {
 		try {
-			cliente = em.find(ClienteJuridico.class, cliente.getId());
-			em.getTransaction().begin();
-			em.remove(cliente);
-			em.getTransaction().commit();
+			cliente = eManager.find(ClienteJuridico.class, cliente.getId());
+			eManager.getTransaction().begin();
+			eManager.remove(cliente);
+			eManager.getTransaction().commit();
 		}catch (Exception ex) {
-			em.getTransaction().rollback();
+			eManager.getTransaction().rollback();
 		}finally {
-			em.close();
+			eManager.close();
 		}
 	}
 
@@ -69,11 +69,11 @@ public class ClienteJuridicoDAO implements IClienteJuridicoDAO{
 	public ClienteJuridico getById(int id) {
 		ClienteJuridico cliente = null;
 		try {
-			cliente = em.find(ClienteJuridico.class, id);
+			cliente = eManager.find(ClienteJuridico.class, id);
 		}catch (Exception ex) {
-			em.getTransaction().rollback();
+			eManager.getTransaction().rollback();
 		}finally {
-			em.close();
+			eManager.close();
 		}
 		return cliente;
 	}
@@ -81,15 +81,16 @@ public class ClienteJuridicoDAO implements IClienteJuridicoDAO{
 	/**
 	 * Método para listar todas os objetos ClienteJuridico persistidos
 	 */
+	@SuppressWarnings("unchecked")
 	public List<ClienteJuridico> getList() {
 		List<ClienteJuridico> clientes = null;
 		try {
-			Query consulta = em.createQuery("SELECT cj FROM ClienteJuridico cj");
+			Query consulta = eManager.createQuery("SELECT cj FROM ClienteJuridico cj");
 			clientes = consulta.getResultList();
 		}catch (Exception ex) {
-			em.getTransaction().rollback();
+			eManager.getTransaction().rollback();
 		}finally {
-			em.close();
+			eManager.close();
 		}
 		return clientes;
 	}

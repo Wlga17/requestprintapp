@@ -11,7 +11,7 @@ import br.com.expertsunited.model.entity.ClienteFisico;
 
 public class ClienteFisicoDAO implements IClienteFisicoDAO{
 
-	private final EntityManager em = UtilJPA.getEntityManager();
+	private final EntityManager eManager = UtilJPA.getEntityManager();
 	
 	/**
 	 * Método para persistir um novo objeto ClienteFisico
@@ -19,13 +19,13 @@ public class ClienteFisicoDAO implements IClienteFisicoDAO{
 	 */
 	public void create(ClienteFisico cliente) {
 		try {
-			em.getTransaction().begin();
-			em.persist(cliente);
-			em.getTransaction().commit();
+			eManager.getTransaction().begin();
+			eManager.persist(cliente);
+			eManager.getTransaction().commit();
 		}catch(Exception ex) {
-			em.getTransaction().rollback();
+			eManager.getTransaction().rollback();
 		}finally {
-			em.close();
+			eManager.close();
 		}
 	}
 
@@ -35,13 +35,13 @@ public class ClienteFisicoDAO implements IClienteFisicoDAO{
 	 */
 	public void update(ClienteFisico cliente) {
 		try {
-			em.getTransaction().begin();
-			em.merge(cliente);
-			em.getTransaction().commit();
+			eManager.getTransaction().begin();
+			eManager.merge(cliente);
+			eManager.getTransaction().commit();
 		}catch (Exception ex) {
-			em.getTransaction().rollback();
+			eManager.getTransaction().rollback();
 		}finally {
-			em.close();
+			eManager.close();
 		}
 		
 	}
@@ -52,14 +52,14 @@ public class ClienteFisicoDAO implements IClienteFisicoDAO{
 	 */
 	public void remove(ClienteFisico cliente) {
 		try {
-			cliente = em.find(ClienteFisico.class, cliente.getId());
-			em.getTransaction().begin();
-			em.remove(cliente);
-			em.getTransaction().commit();
+			cliente = eManager.find(ClienteFisico.class, cliente.getId());
+			eManager.getTransaction().begin();
+			eManager.remove(cliente);
+			eManager.getTransaction().commit();
 		}catch (Exception ex) {
-			em.getTransaction().rollback();
+			eManager.getTransaction().rollback();
 		}finally {
-			em.close();
+			eManager.close();
 		}
 		
 	}
@@ -71,11 +71,11 @@ public class ClienteFisicoDAO implements IClienteFisicoDAO{
 	public ClienteFisico getById(int id) {
 		ClienteFisico cliente = null;
 		try {
-			cliente = em.find(ClienteFisico.class, id);
+			cliente = eManager.find(ClienteFisico.class, id);
 		}catch (Exception ex) {
-			em.getTransaction().rollback();
+			eManager.getTransaction().rollback();
 		}finally {
-			em.close();
+			eManager.close();
 		}
 		return cliente;
 	}
@@ -83,15 +83,16 @@ public class ClienteFisicoDAO implements IClienteFisicoDAO{
 	/**
 	 * Método para listar todas os objetos ClienteFisico persistidos
 	 */
+	@SuppressWarnings("unchecked")
 	public List<ClienteFisico> getList() {
 		List<ClienteFisico> clientes = null;
 		try {
-			Query consulta = em.createQuery("SELECT cf FROM ClienteFisico cf");
+			Query consulta = eManager.createQuery("SELECT cf FROM ClienteFisico cf");
 			clientes = consulta.getResultList();
 		}catch (Exception ex) {
-			em.getTransaction().rollback();
+			eManager.getTransaction().rollback();
 		}finally {
-			em.close();
+			eManager.close();
 		}
 		return clientes;
 	}
