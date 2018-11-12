@@ -11,7 +11,10 @@ import br.com.expertsunited.model.entity.MaterialSolicitacao;
 public class MaterialSolicitacaoDAO implements IMaterialSolicitacaoDAO {
 	EntityManager eManager = UtilJPA.getEntityManager();
 
-	
+	/**
+	 * Método para persistir um novo objeto MaterialSolicitacao
+	 * @param materialsolicitacao 
+	 */
 	
 	public void create(MaterialSolicitacao materialsolicitacao) {
 		try {
@@ -25,6 +28,11 @@ public class MaterialSolicitacaoDAO implements IMaterialSolicitacaoDAO {
 		}
 		
 	}
+	
+	/**
+	 * Método para atualizar um objeto Grafica já persistido
+	 * @param grafica
+	 */
 
 	public void update(MaterialSolicitacao materialsolicitacao) {
 		try {
@@ -38,6 +46,11 @@ public class MaterialSolicitacaoDAO implements IMaterialSolicitacaoDAO {
 		}
 		
 	}
+	
+	/**
+	 * Método para excluir um objeto MaterialSolicitacao já persistido
+	 * @param materialsolicitacao
+	 */
 
 	public void remove(MaterialSolicitacao materialsolicitacao) {
 		try {
@@ -51,6 +64,10 @@ public class MaterialSolicitacaoDAO implements IMaterialSolicitacaoDAO {
 		}
 		
 	}
+	
+	/**
+	 * Método para listar todas os objetos MaterialSolicitacao persistidos
+	 */
 
 	public List<MaterialSolicitacao> getlist() {
 		List<MaterialSolicitacao> materialsolicitacao = null;
@@ -64,6 +81,11 @@ public class MaterialSolicitacaoDAO implements IMaterialSolicitacaoDAO {
 		}
 		return materialsolicitacao;
 	}
+	
+	/**
+	 * Método para buscar um objeto MaterialSolicitacao informando seu ID
+	 * @param id
+	 */
 
 	public MaterialSolicitacao getByID(int id) {
 		MaterialSolicitacao materialsolicitacao = null;
