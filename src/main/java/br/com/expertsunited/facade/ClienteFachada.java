@@ -21,7 +21,7 @@ public class ClienteFachada {
      * @throws Exception
      */
 	public void createCF(ClienteFisico cliente) throws Exception {
-		cliNeg.validarNuloCF(cliente);
+		//cliNeg.validarNuloCF(cliente);
 		cliNeg.inserirClienteCF(cliente);
 	}
 	
