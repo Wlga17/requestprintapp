@@ -14,7 +14,7 @@ public class GraficaFachada {
 	}
 	
 	public void createGrafica(Grafica grafica) throws Exception{
-		graNeg.validarNuloGrafica(grafica);
+		graNeg.validaGrafica(grafica);
 		graNeg.inserirGrafica(grafica);
 	}
 	

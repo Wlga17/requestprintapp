@@ -14,27 +14,27 @@ public class GraficaNegocio {
 		daoGrafica = new GraficaDAO();
 	}
 	
-	public void validarNuloGrafica(Grafica grafica) throws Exception{
+	public void validaGrafica(Grafica grafica) throws Exception{
 		if(grafica == null) {
-			throw new Exception("Grafica não instanciada");
+			throw new Exception("Gráfica não instanciada");
 		}
 		if(grafica.getNome().equals("") == true || grafica.getNome() == null) {
-			throw new Exception("nome da grafica em branco");
+			throw new Exception("Informe o nome da Gráfica");
 		}
 		if(grafica.getEmail().equals("") ||grafica.getEmail() == null) {
-			throw new Exception("email da grafica em branco");
+			throw new Exception("Informe o email da Gráfica");
 		}
 		if(grafica.getTelefone().equals("") ||grafica.getTelefone() == null) {
-			throw new Exception("telefone da grafica em branco");
+			throw new Exception("Informe o telefone da Gráfica");
 		}
 		if(grafica.getCnpj().equals("") ||grafica.getCnpj() == null) {
-			throw new Exception("cnpj da grafica em branco");
+			throw new Exception("Informe o CNPJ da Gráfica");
 		}
 		if(grafica.getLogin().equals("") || grafica.getLogin() == null) {
-			throw new Exception("login da grafica em branco");
+			throw new Exception("Informe um login para a Gráfica");
 		}
 		if(grafica.getSenha().equals("") || grafica.getSenha() == null) {
-			throw new Exception("senha da grafica em branco");
+			throw new Exception("Informe uma senha para a Gráfica");
 		}	
 	}
 	
