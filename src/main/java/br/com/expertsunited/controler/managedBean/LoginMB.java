@@ -28,7 +28,7 @@ public class LoginMB implements Serializable {
 	}
 	
 	public String realizarLogin() {
-		if(login.getLogin().equals("useradmin") && login.getSenha().equals("passfree")) {
+		if(login.getLogin().equals("login") && login.getSenha().equals("pass")) {
 			HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
 			session.setAttribute("usuario", login);
 			return "/app/index?faces-redirect=true";

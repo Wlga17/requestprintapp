@@ -8,19 +8,27 @@
 <h:head>
   <meta http-equiv="Contenty-type" content="text/html;  charset=UTF-8"/>
   <title>Login</title>
+  <h:outputStylesheet library="static" name="css/bootstrap.min.css"></h:outputStylesheet>
 </h:head>
 
 <h:body>
-	<h:form>
-		<h:panelGrid columns="1">
-			<h:outputLabel for="login" value="Login"/>
-			<h:inputText id="login" value="#{loginMB.login.login}"/>
-			
-			<h:outputLabel for="senha" value="Senha"/>
-			<h:inputSecret id="senha" value="#{loginMB.login.senha}"/>
-			
-			<h:commandButton value="Acessar o Sistema" action="#{loginMB.realizarLogin}"/>
-		</h:panelGrid>
-	</h:form>
+	<div class="container">
+		<h:form>
+			<h:panelGrid columns="1">
+				<h:outputLabel for="login" value="Login"/>
+				<h:inputText id="login" value="#{loginMB.login.login}"/>
+				
+				<h:outputLabel for="senha" value="Senha"/>
+				<h:inputSecret id="senha" value="#{loginMB.login.senha}"/>
+				
+				<h:commandButton value="Acessar o Sistema" styleClass="btn btn-info" action="#{loginMB.realizarLogin}"/>
+			</h:panelGrid>
+		</h:form>
+	</div>
+	<div id="footer">
+		<h:outputScript library="static" name="js/jquery-3.3.1.slim.min.js"></h:outputScript>
+		<h:outputScript library="static" name="js/popper.min.js"></h:outputScript>
+		<h:outputScript library="static" name="js/bootstrap.min.js"></h:outputScript>
+	</div>
 </h:body>
 </html>
