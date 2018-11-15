@@ -93,4 +93,23 @@ public class UsuarioDAO implements IUsuarioDAO {
 		}
 		return usuario;
 	}
+	
+	/**
+	 * Método para buscar um objeto Usuario informando seu login e senha
+	 * @param login 
+	 * @param senha
+	 */
+	public Usuario getUsuario(String login, String senha) {
+		try {
+			Usuario usuario = (Usuario) eManager.createQuery("SELECT u FROM Usuario u WHERE u.login = :login AND u.senha = :senha")
+					.setParameter("login", login).setParameter("senha", senha).getSingleResult();
+			return usuario;		
+		} catch(Exception exp) {
+			exp.printStackTrace();
+			eManager.getTransaction().rollback();
+			return null;
+		} finally {
+			eManager.close();
+		}
+	}
 }

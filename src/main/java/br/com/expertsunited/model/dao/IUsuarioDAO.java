@@ -10,4 +10,5 @@ public interface IUsuarioDAO {
 	public void remove(Usuario usuario);
 	public List<Usuario> getList();
 	public Usuario getByID(int id);
+	public Usuario getUsuario(String login, String senha);
 }
