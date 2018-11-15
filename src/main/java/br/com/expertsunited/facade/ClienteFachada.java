@@ -3,8 +3,8 @@ package br.com.expertsunited.facade;
 import java.util.List;
 
 import br.com.expertsunited.controler.regra.ClienteNegocio;
-import br.com.expertsunited.model.entity.ClienteFisico;
-import br.com.expertsunited.model.entity.ClienteJuridico;
+import br.com.expertsunited.model.entity.Cliente;
+
 
 
 public class ClienteFachada {
@@ -16,101 +16,49 @@ public class ClienteFachada {
 	}
 	
 	/**
-     * Chama as regras de negocio para cadastro de um ClienteFisico
-     * @param cliente Todos os dados do ClienteFisico
+     * Chama as regras de negocio para cadastro de um Cliente
+     * @param cliente Todos os dados do Cliente
      * @throws Exception
      */
-	public void createCF(ClienteFisico cliente) throws Exception {
+	public void createCF(Cliente cliente) throws Exception {
 		//cliNeg.validarNuloCF(cliente);
-		cliNeg.inserirClienteCF(cliente);
+		cliNeg.inserirCliente(cliente);
 	}
 	
 	/**
-     * Atualiza os dados de um ClienteFisico
-     * @param cliente Dados do ClienteFisico
+     * Atualiza os dados de um Cliente
+     * @param cliente Dados do Cliente
      * @throws Exception
      */
-	public void updateCF(ClienteFisico cliente) throws Exception {
-		cliNeg.alterarClienteCF(cliente);
-	}
-	
-	/**
-     * Remove um registro do banco de dados
-     * @param cliente Dados do ClienteFisico a ser excluido
-     * @throws Exception
-     */
-	public void removeCF(ClienteFisico cliente) throws Exception {
-		cliNeg.removerClienteCF(cliente);
-	}
-	
-	/**
-     * Retorna um ClienteFisico baseado no dado passado
-     * @param id ID do ClienteFisico a ser consultado
-     * @return O ClienteFisico encontrado ou NULL
-     * @throws Exception
-     */
-	public ClienteFisico getByIdCF(int id) throws Exception {
-		return cliNeg.buscarPorIdCF(id);
-	}
-	
-	/**
-     * Retorna a lista de todos os ClienteFisico
-     * @return Lista de ClienteFisico
-     * @throws Exception
-     */
-	public List<ClienteFisico> getListCF() throws Exception {
-		return cliNeg.listarTodosCF();
-	}
-
-	
-	//////////////////////////////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////////////////////////////
-	
-	
-	/**
-     * Chama as regras de negocio para cadastro de um ClienteJuridico
-     * @param cliente Todos os dados do ClienteJuridico
-     * @throws Exception
-     */
-	public void createCJ(ClienteJuridico cliente) throws Exception{
-		cliNeg.validarNuloCJ(cliente);
-		cliNeg.inserirClienteCJ(cliente);
-	}
-	
-	/**
-     * Atualiza os dados de um ClienteJuridico
-     * @param cliente Dados do ClienteJuridico
-     * @throws Exception
-     */
-	public void updateCJ(ClienteJuridico cliente) throws Exception{
-		cliNeg.alterarClienteCJ(cliente);
+	public void updateCF(Cliente cliente) throws Exception {
+		cliNeg.alterarCliente(cliente);
 	}
 	
 	/**
      * Remove um registro do banco de dados
-     * @param cliente Dados do ClienteJuridico a ser excluido
+     * @param cliente Dados do Cliente a ser excluido
      * @throws Exception
      */
-	public void removeCJ(ClienteJuridico cliente) throws Exception{
-		cliNeg.removerClienteCJ(cliente);
+	public void removeCF(Cliente cliente) throws Exception {
+		cliNeg.removerCliente(cliente);
 	}
 	
 	/**
-     * Retorna um ClienteJuridico baseado no dado passado
-     * @param id ID do ClienteJuridico a ser consultado
-     * @return O ClienteJuridico encontrado ou NULL
+     * Retorna um Cliente baseado no dado passado
+     * @param id ID do Cliente a ser consultado
+     * @return O Cliente encontrado ou NULL
      * @throws Exception
      */
-	public ClienteJuridico getByIdCJ(int id) throws Exception{
-		return cliNeg.buscarPorIdCJ(id);
+	public Cliente getByIdCF(int id) throws Exception {
+		return cliNeg.buscarPorId(id);
 	}
 	
 	/**
-     * Retorna a lista de todos os ClienteJuridico
-     * @return Lista de ClienteJuridico
+     * Retorna a lista de todos os Cliente
+     * @return Lista de Cliente
      * @throws Exception
      */
-	public List<ClienteJuridico> getListCJ() throws Exception{
-		return cliNeg.listarTodosCJ();
+	public List<Cliente> getListCF() throws Exception {
+		return cliNeg.listarTodos();
 	}
 }

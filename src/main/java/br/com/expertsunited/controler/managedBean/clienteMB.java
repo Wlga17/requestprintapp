@@ -5,32 +5,32 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 
 import br.com.expertsunited.facade.ClienteFachada;
-import br.com.expertsunited.model.entity.ClienteFisico;
+import br.com.expertsunited.model.entity.Cliente;
 
 @ManagedBean()
 public class clienteMB {
 
-	ClienteFisico cf = new ClienteFisico();
+	Cliente cf = new Cliente();
 	
-	List<ClienteFisico> listaCliente;
+	List<Cliente> listaCliente;
 	
 	public clienteMB() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ClienteFisico getCf() {
+	public Cliente getCf() {
 		return cf;
 	}
 
-	public void setCf(ClienteFisico cf) {
+	public void setCf(Cliente cf) {
 		this.cf = cf;
 	}
 
-	public List<ClienteFisico> getListaCliente() {
+	public List<Cliente> getListaCliente() {
 		return listaCliente;
 	}
 
-	public void setListaCliente(List<ClienteFisico> listaCliente) {
+	public void setListaCliente(List<Cliente> listaCliente) {
 		this.listaCliente = listaCliente;
 	}
 	
