@@ -1,6 +1,7 @@
 @charset "ISO-8859-1";
 
-#view-login {
+#view-login,
+#view-cadastro {
 	width: 100%;
 	height: 100vh;
 	background-color: #343a3e;
@@ -14,8 +15,17 @@
 	width: 340px;
 	height: auto;
 }
+
+#view-cadastro .box-cadastro label,
+#view-cadastro .box-cadastro p,
 #view-login .box-login label,
 #view-login .box-login p {
 	color: #fff;
 }
+
+#view-cadastro .box-cadastro p {
+	font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
 

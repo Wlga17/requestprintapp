@@ -4,38 +4,65 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
-     
 <h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Cadastrar Gráfica</title>
+  <meta http-equiv="Contenty-type" content="text/html;  charset=UTF-8"/>
+  <title>Cadastrar Gráfica</title>
+  <h:outputStylesheet library="static" name="css/bootstrap.min.css"></h:outputStylesheet>
+  <h:outputStylesheet library="static" name="css/app-style.css"></h:outputStylesheet>
 </h:head>
 
-<h:body>
-	<h1>Cadastrar Gráfica</h1>
-    <h:form>
-        <h:panelGrid columns="1">
-            <!-- <p:inputText id="" value="#{graficaMB.grafica.fornecedor}" type="hidden"> -->
-            
-            <h:outputLabel for="nome" value="Nome"/>
-            <h:inputText id="nome" value="#{graficaMB.grafica.nome}"/>
-
-			<h:outputLabel for="email" value="Email"/>
-            <h:inputText id="email" value="#{graficaMB.grafica.email}"/>
-            
-            <h:outputLabel for="telefone" value="Telefone"/>
-            <h:inputText id="telefone" value="#{graficaMB.grafica.telefone}"/>
-            
-            <h:outputLabel for="cnpj" value="CNPJ"/>
-            <h:inputText id="cnpj" value="#{graficaMB.grafica.cnpj}"/>
-            
-            <h:outputLabel for="login" value="Login"/>
-            <h:inputText id="login" value="#{graficaMB.grafica.login}"/>
- 
-            <h:outputLabel for="senha" value="Senha"/>
-            <h:inputSecret id="senha" value="#{graficaMB.grafica.senha}"/>
- 
-            <h:commandButton id="btn-finalizar" value="Finalizar Cadastro" action="#{graficaMB.inserir}"/>
-        </h:panelGrid>
-	</h:form>
-</h:body>
+<body>
+	<div id="view-cadastro">
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<div class="col-4">
+					<div class="box-cadastro">
+						<div class="image-logo-login d-flex justify-content-center my-5">
+							<h:graphicImage value="../resources/static/image/request-print-2.png"/>
+						</div>
+						<h:form>
+							<p class="text-center mb-3">Realize seu Cadastro</p>
+							<div class="form-group">
+								<h:outputLabel for="nome" value="Nome"/>
+								<h:inputText id="nome" styleClass="form-control"/>
+							</div>
+							<div class="form-group">
+								<h:outputLabel for="email" value="Email"/>
+								<h:inputText id="email" styleClass="form-control"/>
+							</div>
+							<div class="row">
+								<div class="col-6">
+									<div class="form-group">
+										<h:outputLabel for="telefone" value="Telefone"/>
+										<h:inputText id="telefone" styleClass="form-control"/>
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="form-group">
+										<h:outputLabel for="cnpj" value="CNPJ"/>
+										<h:inputText id="cnpj" styleClass="form-control"/>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<h:outputLabel for="login" value="Login"/>
+								<h:inputText id="login" styleClass="form-control"/>
+							</div>
+							<div class="form-group">
+								<h:outputLabel for="senha" value="Senha"/>
+								<h:inputText id="senha" styleClass="form-control"/>
+							</div>
+							<h:commandButton value="Finalizar Cadastro" styleClass="btn btn-warning w-100"/>
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<h:outputScript library="static" name="js/jquery-3.3.1.slim.min.js"></h:outputScript>
+		<h:outputScript library="static" name="js/popper.min.js"></h:outputScript>
+		<h:outputScript library="static" name="js/bootstrap.min.js"></h:outputScript>
+	</div>
+</body>
 </html>
