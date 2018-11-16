@@ -50,7 +50,7 @@ public class GraficaDAO implements IGraficaDAO {
 	 */
 	public void remove(Grafica grafica) {
 		try {
-			grafica = eManager.find(Grafica.class, grafica.getId());
+			grafica = eManager.find(Grafica.class, grafica.getIdUsuario());
 			eManager.getTransaction().begin();
 			eManager.remove(grafica);
 			eManager.getTransaction().commit();

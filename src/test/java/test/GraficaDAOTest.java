@@ -16,14 +16,14 @@ public class GraficaDAOTest {
 //		Grafica grafica = new Grafica();
 //		GraficaDAO graficaDao = new GraficaDAO();
 //		
-//		grafica.setNome("Delete me");
-//		grafica.setCnpj("8974.3256.84");
-//		grafica.setEmail("deleteme@grafica.com");
-//		grafica.setTelefone("8199756-8451");
-//		grafica.setFornecedor(true);
+//		grafica.setNome("Gráfica Yellow");
+//		grafica.setCnpj("0001.3256.84");
+//		grafica.setEmail("graficayellow@mail.com");
+//		grafica.setTelefone("81 3245-9874");
 //		grafica.setAvaliacao(2);
-//		grafica.setLogin("deletemeadmin");
-//		grafica.setSenha("novasenha");
+//		grafica.setLogin("yellow");
+//		grafica.setSenha("yellow123");
+//		grafica.setIsGrafica(1);
 //		
 //		graficaDao.create(grafica);
 //	}
