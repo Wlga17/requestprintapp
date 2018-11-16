@@ -6,31 +6,34 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
+import br.com.expertsunited.facade.UsuarioFachada;
 import br.com.expertsunited.model.entity.Login;
+import br.com.expertsunited.model.entity.Usuario;
 
 @ManagedBean
 @SessionScoped
 public class LoginMB implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private Login login;
+	private Usuario usuario;
 	
 	public LoginMB() {
-		login = new Login();
+		usuario = new Usuario();
 	}
 
-	public Login getLogin() {
-		return login;
+	public Usuario getLogin() {
+		return usuario;
 	}
 
-	public void setLogin(Login login) {
-		this.login = login;
+	public void setLogin(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
-	public String realizarLogin() {
-		if(login.getLogin().equals("login") && login.getSenha().equals("pass")) {
+	public String realizarLogin() throws Exception {
+		UsuarioFachada usuarioFach = new UsuarioFachada();
+		if(usuarioFach.login(usuario)) {
 			HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
-			session.setAttribute("usuario", login);
+			session.setAttribute("usuario", usuario);
 			return "/app/index?faces-redirect=true";
 		} else {
 			return "/seguranca/login?faces-redirect=true";

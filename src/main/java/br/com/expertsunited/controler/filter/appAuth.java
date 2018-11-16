@@ -11,8 +11,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import br.com.expertsunited.model.entity.Login;
+import br.com.expertsunited.model.entity.Usuario;
 
 @WebFilter(filterName = "appAuth", urlPatterns = {"/app/*"})
 public class appAuth implements Filter {
@@ -31,9 +30,9 @@ public class appAuth implements Filter {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
 		HttpSession session = (HttpSession) req.getSession();
-		Login login = (Login) session.getAttribute("usuario");
+		Usuario usuario = (Usuario) session.getAttribute("usuario");
 		
-		if (login == null) {
+		if (usuario == null) {
 			res.sendRedirect(req.getContextPath() + "/seguranca/login.xhtml");
 		} else {
 			chain.doFilter(request, response);
