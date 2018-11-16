@@ -11,31 +11,28 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import br.com.expertsunited.model.entity.Usuario;
 
-@WebFilter(filterName = "loginAuth", urlPatterns = {"/seguranca/login.xhtml"})
-public class loginAuth implements Filter {
+@WebFilter(filterName = "cadastrograficaAuth", urlPatterns = {"/cadastro/grafica.xhtml"})
+public class cadastrograficaAuth implements Filter {
 
-    public loginAuth() {
-        // TODO Auto-generated constructor stub
-    }
+  public cadastrograficaAuth() {
+      // TODO Auto-generated constructor stub
+  }
 
 	public void destroy() {
 		// TODO Auto-generated method stub
 	}
 
-
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
 		HttpSession session = (HttpSession) req.getSession();
 		Usuario usuario = (Usuario) session.getAttribute("usuario");
 		
 		if (usuario == null) {
-			chain.doFilter(request, response);
-		} else {
-			res.sendRedirect(req.getContextPath() + "/app/index.xhtml");
+			res.sendRedirect(req.getContextPath() + "/cadastro/grafica.xhtml");
 		}
 	}
 

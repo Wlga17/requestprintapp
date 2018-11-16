@@ -7,7 +7,6 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
 import br.com.expertsunited.facade.UsuarioFachada;
-import br.com.expertsunited.model.entity.Login;
 import br.com.expertsunited.model.entity.Usuario;
 
 @ManagedBean
@@ -43,5 +42,9 @@ public class LoginMB implements Serializable {
 	public String realizarLogout() {
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
 		return "/seguranca/login?faces-redirect=true";
+	}
+	
+	public String cadastroGrafica() throws Exception {
+		return "/cadastro/grafica?faces-redirect=true";
 	}
 }

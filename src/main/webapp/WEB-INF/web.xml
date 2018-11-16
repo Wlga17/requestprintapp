@@ -16,6 +16,12 @@
   	<description></description>
   	<filter-class>br.com.expertsunited.controler.filter.appAuth</filter-class>
   </filter>
+  <filter>
+  	<filter-name>cadastrograficaAuth</filter-name>
+  	<display-name>cadastrograficaAuth</display-name>
+  	<description></description>
+  	<filter-class>br.com.expertsunited.controler.filter.cadastrograficaAuth</filter-class>
+  </filter>
   <filter-mapping>
   	<filter-name>loginAuth</filter-name>
   	<url-pattern>/seguranca/login.xhtml</url-pattern>
@@ -23,6 +29,10 @@
   <filter-mapping>
   	<filter-name>appAuth</filter-name>
   	<url-pattern>/app/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>cadastrograficaAuth</filter-name>
+  	<url-pattern>/cadastro/grafica.xhtml</url-pattern>
   </filter-mapping>
   <welcome-file-list>
   	<welcome-file>seguranca/login.xhtml</welcome-file>
