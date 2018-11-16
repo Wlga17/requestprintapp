@@ -24,7 +24,7 @@
   </filter>
   <filter-mapping>
   	<filter-name>loginAuth</filter-name>
-  	<url-pattern>/seguranca/login.xhtml</url-pattern>
+  	<url-pattern>/seguranca/*</url-pattern>
   </filter-mapping>
   <filter-mapping>
   	<filter-name>appAuth</filter-name>

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import br.com.expertsunited.model.entity.Usuario;
 
-@WebFilter(filterName = "loginAuth", urlPatterns = {"/seguranca/login.xhtml"})
+@WebFilter(filterName = "loginAuth", urlPatterns = {"/seguranca/*"})
 public class loginAuth implements Filter {
 
     public loginAuth() {

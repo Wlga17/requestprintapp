@@ -45,6 +45,6 @@ public class LoginMB implements Serializable {
 	}
 	
 	public String cadastroGrafica() throws Exception {
-		return "/cadastro/grafica?faces-redirect=true";
+		return "/cadastro/teste?faces-redirect=true";
 	}
 }

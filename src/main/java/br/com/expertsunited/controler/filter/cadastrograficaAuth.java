@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import br.com.expertsunited.model.entity.Usuario;
 
-@WebFilter(filterName = "cadastrograficaAuth", urlPatterns = {"/cadastro/grafica.xhtml"})
+@WebFilter(filterName = "cadastrograficaAuth", urlPatterns = {"/cadastro/teste.xhtml"})
 public class cadastrograficaAuth implements Filter {
 
   public cadastrograficaAuth() {
@@ -32,7 +32,7 @@ public class cadastrograficaAuth implements Filter {
 		Usuario usuario = (Usuario) session.getAttribute("usuario");
 		
 		if (usuario == null) {
-			res.sendRedirect(req.getContextPath() + "/cadastro/grafica.xhtml");
+			res.sendRedirect(req.getContextPath() + "/cadastro/teste.xhtml");
 		}
 	}
 
