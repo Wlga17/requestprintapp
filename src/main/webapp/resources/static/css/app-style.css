@@ -1,0 +1,21 @@
+@charset "ISO-8859-1";
+
+#view-login {
+	width: 100%;
+	height: 100vh;
+	background-color: #343a3e;
+}
+
+#view-login > div {
+	height: inherit;
+}
+
+#view-login .box-login {
+	width: 340px;
+	height: auto;
+}
+#view-login .box-login label,
+#view-login .box-login p {
+	color: #fff;
+}
+

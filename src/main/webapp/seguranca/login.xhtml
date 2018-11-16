@@ -9,21 +9,34 @@
   <meta http-equiv="Contenty-type" content="text/html;  charset=UTF-8"/>
   <title>Login</title>
   <h:outputStylesheet library="static" name="css/bootstrap.min.css"></h:outputStylesheet>
+  <h:outputStylesheet library="static" name="css/app-style.css"></h:outputStylesheet>
 </h:head>
 
 <h:body>
-	<div class="container">
-		<h:form>
-			<h:panelGrid columns="1">
-				<h:outputLabel for="login" value="Login"/>
-				<h:inputText id="login" value="#{loginMB.login.login}"/>
-				
-				<h:outputLabel for="senha" value="Senha"/>
-				<h:inputSecret id="senha" value="#{loginMB.login.senha}"/>
-				
-				<h:commandButton value="Acessar o Sistema" styleClass="btn btn-info" action="#{loginMB.realizarLogin}"/>
-			</h:panelGrid>
-		</h:form>
+	<div id="view-login">
+		<div class="container-fluid d-flex justify-content-center align-items-center">
+			<div class="box-login">
+				<div class="image-logo-login d-flex justify-content-center mb-5">
+					<h:graphicImage value="../resources/static/image/request-print-2.png"/>
+				</div>
+				<h:form>
+					<div class="form-group">
+						<h:outputLabel for="login" value="Login"/>
+						<h:inputText id="login" styleClass="form-control" value="#{loginMB.login.login}"/>
+					</div>
+					<div class="form-group mb-4">	
+						<h:outputLabel for="senha" value="Senha"/>
+						<h:inputSecret id="senha" styleClass="form-control" value="#{loginMB.login.senha}"/>
+					</div>
+					<h:commandButton value="Acessar o Sistema" styleClass="btn btn-info w-100" action="#{loginMB.realizarLogin}"/>
+					<p class="my-3 text-center">Se ainda não possui login e senha cadastre-se</p>
+					<div class="login-buttons d-flex justify-content-between">
+						<h:commandLink value="Cadastrar Cliente" styleClass="btn btn-warning"/>
+						<h:commandLink value="Cadastrar Gráfica" styleClass="btn btn-warning"/>
+					</div>
+				</h:form>
+			</div>
+		</div>
 	</div>
 	<div id="footer">
 		<h:outputScript library="static" name="js/jquery-3.3.1.slim.min.js"></h:outputScript>
