@@ -22,6 +22,7 @@ public class graficaMB {
 	}
 	
 	public void inserir() {
+		getGrafica().setIsGrafica(1);
 		if (this.grafica != null) {
 			GraficaFachada fachada = new GraficaFachada();
 			try {
