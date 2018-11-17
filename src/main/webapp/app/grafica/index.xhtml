@@ -8,13 +8,19 @@
 <h:head>
   <meta http-equiv="Contenty-type" content="text/html;  charset=UTF-8"/>
   <title>Request Print</title>
+  <h:outputStylesheet library="static" name="css/bootstrap.min.css"></h:outputStylesheet>
+  <h:outputStylesheet library="static" name="css/app-style.css"></h:outputStylesheet>
 </h:head>
 
+<ui:insert xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	<ui:include src="/includes/header-grafica.xhtml"/>
+</ui:insert>
+
 <h:body>
-	<h1>Bem vindo #{loginMB.login.login} minha gráfica favorita!</h1>
-	<br/>
-	<h:form>
-		<h:commandButton value="Sair" action="#{loginMB.realizarLogout}" />
-	</h:form>
+	<h1>Bem vindo minha gráfica favorita!</h1>
+	
+	<ui:insert xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+		<ui:include src="/includes/footer.xhtml"/>
+	</ui:insert>
 </h:body>
 </html>
