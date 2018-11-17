@@ -29,6 +29,11 @@
     text-transform: uppercase;
 }
 
+/* Body APP */
+body.view-app {
+	margin-top: 67px;	
+}
+
 /* Header Cliente e Gráfica */
 #header {
 	width: 100%;
@@ -57,3 +62,40 @@
 	width: 50px;
 	margin-right: .5rem;
 }
+
+/* Menu Cliente e Grafica */
+.menu-grafica,
+.menu-cliente {
+	background-color: #343a3e;
+	height: 100vh;
+}
+
+.menu-grafica ul,
+.menu-cliente ul {
+	margin: 0;
+	padding: 2rem 0 0 1rem;
+	list-style: none;
+}
+
+.menu-grafica ul li,
+.menu-cliente ul li {
+	padding: 1rem 0;
+}
+
+.menu-grafica ul a,
+.menu-cliente ul a {
+	color: #fff;
+	text-transform: uppercase;
+	width: 100%;
+    display: inline-block;
+    transition: .3s ease;
+}
+
+.menu-grafica ul a:hover,
+.menu-cliente ul a:hover {
+	text-decoration: none;
+	color: #ffc107;
+}
+
+
+
