@@ -10,20 +10,21 @@ import br.com.expertsunited.model.entity.Cliente;
 @ManagedBean()
 public class clienteMB {
 
-	Cliente cf = new Cliente();
+	Cliente cliente = new Cliente();
 	
 	List<Cliente> listaCliente;
+	
 	
 	public clienteMB() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Cliente getCf() {
-		return cf;
+	public Cliente getCliente() {
+		return cliente;
 	}
 
-	public void setCf(Cliente cf) {
-		this.cf = cf;
+	public void setCliente(Cliente cf) {
+		this.cliente = cf;
 	}
 
 	public List<Cliente> getListaCliente() {
@@ -35,10 +36,11 @@ public class clienteMB {
 	}
 	
 	public void inserir() {
-		if(this.cf != null) {
+		getCliente().setIsGrafica(0);
+		if(this.cliente != null) {
 			ClienteFachada fachada = new ClienteFachada();
 			try {
-				fachada.createCF(cf);
+				fachada.createCF(cliente);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
