@@ -17,7 +17,7 @@
 		<div class="container-fluid d-flex justify-content-center align-items-center">
 			<div class="box-login">
 				<div class="image-logo-login d-flex justify-content-center mb-5">
-					<h:graphicImage value="./resources/static/image/request-print-2.png"/>
+					<h:graphicImage value="../resources/static/image/request-print-2.png"/>
 				</div>
 				<h:form>
 					<div class="form-group">
@@ -38,10 +38,8 @@
 			</div>
 		</div>
 	</div>
-	<div id="footer">
-		<h:outputScript library="static" name="js/jquery-3.3.1.slim.min.js"></h:outputScript>
-		<h:outputScript library="static" name="js/popper.min.js"></h:outputScript>
-		<h:outputScript library="static" name="js/bootstrap.min.js"></h:outputScript>
-	</div>
+	<ui:insert xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+		<ui:include src="/includes/footer.xhtml"/>
+	</ui:insert>
 </h:body>
 </html>

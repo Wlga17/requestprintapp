@@ -59,10 +59,8 @@
 			</div>
 		</div>
 	</div>
-	<div id="footer">
-		<h:outputScript library="static" name="js/jquery-3.3.1.slim.min.js"></h:outputScript>
-		<h:outputScript library="static" name="js/popper.min.js"></h:outputScript>
-		<h:outputScript library="static" name="js/bootstrap.min.js"></h:outputScript>
-	</div>
+	<ui:insert xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+		<ui:include src="/includes/footer.xhtml"/>
+	</ui:insert>
 </body>
 </html>
