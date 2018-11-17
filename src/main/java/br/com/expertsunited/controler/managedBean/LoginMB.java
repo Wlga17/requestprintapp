@@ -33,7 +33,10 @@ public class LoginMB implements Serializable {
 		if(usuarioFach.login(usuario)) {
 			HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
 			session.setAttribute("usuario", usuario);
-			return "/app/index?faces-redirect=true";
+			if(usuarioFach.tipoLogin(usuario)) {
+				return "/app/grafica/index?faces-redirect=true";
+			} 
+			return "/app/cliente/index?faces-redirect=true";
 		} else {
 			return "/seguranca/login?faces-redirect=true";
 		}

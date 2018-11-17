@@ -24,4 +24,12 @@ public class UsuarioNegocio {
 		}
 		return false;
 	}
+	
+	public boolean loginGrafica(Usuario usuario) throws Exception {
+		Usuario usuarioLogin = usuarioDAO.getUsuario(usuario.getLogin(), usuario.getSenha());
+		if (usuarioLogin != null && usuarioLogin.getIsGrafica() == 1) {
+			return true;
+		}
+		return false;
+	}
 }

@@ -13,4 +13,8 @@ public class UsuarioFachada {
 	public boolean login(Usuario usuario) throws Exception {
 		return usuarioNeg.validaLoginSenha(usuario);
 	}
+	
+	public boolean tipoLogin(Usuario usuario) throws Exception {
+		return usuarioNeg.loginGrafica(usuario);
+	}
 }
