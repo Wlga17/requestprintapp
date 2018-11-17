@@ -28,7 +28,10 @@
 						<h:outputLabel for="senha" value="Senha"/>
 						<h:inputSecret id="senha" styleClass="form-control" value="#{loginMB.login.senha}"/>
 					</div>
-					<h:commandButton value="Acessar o Sistema" styleClass="btn btn-info w-100" action="#{loginMB.realizarLogin}"/>
+			
+					<h:commandButton value="Acessar ambiente Cliente" styleClass="btn btn-info w-100 mb-3" action="#{loginMB.loginCliente}"/>
+					<h:commandButton value="Acessar ambiente Grafica" styleClass="btn btn-info w-100" action="#{loginMB.loginGrafica}"/>
+					
 					<p class="my-3 text-center">Se ainda não possui login e senha cadastre-se</p>
 					<div class="login-buttons d-flex justify-content-between">
 						<h:commandLink value="Cadastrar Cliente" styleClass="btn btn-warning" action="#{loginMB.cadastroCliente}"/>

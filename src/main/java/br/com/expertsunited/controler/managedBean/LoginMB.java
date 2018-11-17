@@ -28,14 +28,24 @@ public class LoginMB implements Serializable {
 		this.usuario = usuario;
 	}
 	
-	public String realizarLogin() throws Exception {
+	public String loginGrafica() throws Exception {
 		UsuarioFachada usuarioFach = new UsuarioFachada();
 		if(usuarioFach.login(usuario)) {
 			HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
 			session.setAttribute("usuario", usuario);
-			if(usuarioFach.tipoLogin(usuario)) {
-				return "/app/grafica/index?faces-redirect=true";
-			} 
+			
+			return "/app/grafica/index?faces-redirect=true";
+		} else {
+			return "/seguranca/login?faces-redirect=true";
+		}
+	}
+	
+	public String loginCliente() throws Exception {
+		UsuarioFachada usuarioFach = new UsuarioFachada();
+		if(usuarioFach.login(usuario)) {
+			HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+			session.setAttribute("usuario", usuario);
+			
 			return "/app/cliente/index?faces-redirect=true";
 		} else {
 			return "/seguranca/login?faces-redirect=true";
