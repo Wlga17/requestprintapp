@@ -12,18 +12,30 @@
 </h:head>
 
 <h:body>
+	<h1>Cadastrar Proposta</h1>
 	<h:form>
 		<h:panelGrid columns="2">
-			Data da Proposta:
-			<h:inputText value="#{propostaMB.proposta.dataProposta}"/>
-			Descrição: 
-			<h:inputTextarea value="#{propostaMB.proposta.descricao}"/>
-			Grafica:
-			<h:inputText value="#{propostaMB.proposta.grafica}"> 
-			</h:inputText>
-			Solicitação:
-			<h:inputText value="#{propostaMB.proposta.solicitacao}"/>
 			
+			<h:outputLabel for="data" value="Data da Propota: "/>
+			<h:inputText id="data" value="#{propostaMB.proposta.dataProposta}"/>
+			
+			<h:outputLabel for="descricao" value="Descrição: "/>
+			<h:inputTextarea id="descricao" rows="5" cols="21" value="#{propostaMB.proposta.descricao}"/>
+			
+			<h:outputLabel for="grafica" value="Grafica: "/>
+			<h:selectOneMenu id="grafica" value="#{propostaMB.proposta.grafica}">
+				<f:selectItem itemLabel="-- Graficas --" noSelectionOption="true"/>
+				<f:selectItems value="#{propostaMB.grafs}" var="vGrafica"
+					itemValue="#{vGrafica}" itemLabel="#{vGrafica.nome}"/>			
+			</h:selectOneMenu>
+			
+			<h:outputLabel for="solicitacao" value="Solicitação: "/>
+			<h:selectOneMenu id="solicitacao" value="#{propostaMB.proposta.solicitacao}">
+				<f:selectItem itemLabel="-- Solicitações --" noSelectionOption="true"/>
+				<f:selectItems	value="#{propostaMB.sols}" var="vSolicitacao"
+					itemValue="#{vSolicitacao}"	itemLabel="#{vSolicitacao.titulo}"/>
+			</h:selectOneMenu> 
+			<br></br>
 			<h:commandButton value="fazer proposta" action="#{propostaMB.inserir}"/>
 		</h:panelGrid>
 	</h:form>
