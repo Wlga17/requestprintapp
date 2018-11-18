@@ -8,11 +8,11 @@
 
 <h:head>
 	<meta http-equiv="Contenty-type" content="text/html;  charset=UTF-8"/>
+	 <h:outputStylesheet library="static" name="css/solicitacao-style.css"></h:outputStylesheet>
 	<title>Request Print</title>
 </h:head>
 
 <h:body>
-
 	<h:form>
 		
 		<h:outputLabel for = "titulo" value = "Titulo"/>
@@ -28,11 +28,12 @@
 		<br/>
 		
 		<h:outputLabel for = "possuiArquivo" value = "PossuiArquivo"/>
-		<h:inputText id = "possuiArquivo" value = "#{SolicitacaoMB.solicitacao.possuiArquivo}"/><br/>
+		<h:selectBooleanCheckbox id = "possuiArquivo" value = "#{SolicitacaoMB.solicitacao.possuiArquivo}"/>
 		<br/>
 		
 		<h:outputLabel for = "solicitaArte" value = "SolicitaArte"/>
-		<h:inputText id = "solicitaArte" value = "#{SolicitacaoMB.solicitacao.solicitaArte}"/><br/>
+		<h:selectBooleanCheckbox id = "solicitaArte" value = "#{SolicitacaoMB.solicitacao.solicitaArte}"/> 
+		
 		<br/>
 		
 		<h:outputLabel for = "observacao" value = "Observacao"/>
@@ -41,6 +42,7 @@
 		<h:commandButton value = "Finalizar Solicitacao" action = "#{SolicitacaoMB.inserirSolicitacao}"/>
 		
 	</h:form>
+
 
 </h:body>
 
