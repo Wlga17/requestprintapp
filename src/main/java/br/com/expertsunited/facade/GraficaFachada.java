@@ -26,7 +26,7 @@ public class GraficaFachada {
 		graNeg.removerGrafica(grafica);
 	}
 	
-	public Grafica getByIdCategoria(int id) throws Exception{
+	public Grafica getByIdGrafica(int id) throws Exception{
 		return graNeg.buscarPorIdGrafica(id);
 	}
 	

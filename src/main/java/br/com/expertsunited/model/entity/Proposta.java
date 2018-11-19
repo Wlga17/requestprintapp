@@ -21,10 +21,10 @@ public class Proposta implements Serializable {
 	@Column(name="data_proposta")
 	private String dataProposta;
 	@ManyToOne
-	@JoinColumn(name="solicitacao", nullable = false )
+	@JoinColumn(name="solicitacao")
 	private Solicitacao solicitacao;
 	@ManyToOne
-	@JoinColumn(name="grafica", nullable = false)
+	@JoinColumn(name="grafica")
 	private Grafica grafica;
 	
 	public Proposta() {
