@@ -1,7 +1,8 @@
 @charset "ISO-8859-1";
 html,
 body {
-	backround-color: #ecebeb !important;
+	background-color: #ecebeb;
+	color: #343a3e;
 }
 
 /* View Login e Cadastro */
@@ -35,7 +36,7 @@ body {
 
 /* Body APP */
 body.view-app {
-	margin-top: 67px;	
+	margin-top: 103px;	
 }
 
 /* Header Cliente e Gráfica */
@@ -107,21 +108,27 @@ body.view-app {
 	margin-top: 4rem;
 }
 
-.grid-graficas {
-	display: flex;
+.grafica-item-logo {
 	width: 100%;
+	height: 200px;
+	border-radius: 5px;
+	background-color: #fff;
+	display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.10);
+	-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.10);
+	box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.10);
 }
 
-.list-grafica-item {
-	width: 25%;
-	background-color: orange;
-}
-    
-.list-grafica-item .grafica-item-logo {
-	width: 150;
-	
+.grafica-item-logo img {
+	display: block;
+	width: 70%;
 }
 
-.list-grafica-item .grafica-item-logo:not(:first-of-type) {
-	margin-left: 4rem;
-}
+.grafica-item h3 {
+	font-size: 1.4rem;
+    font-weight: 600;
+    color: #343a3e;
+    margin-bottom: 1rem;
+}    

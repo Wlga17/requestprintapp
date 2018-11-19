@@ -4,7 +4,7 @@
 	            xmlns:f="http://xmlns.jcp.org/jsf/core">
 	<div class="dashboard-cliente">
 		<h:form styleClass="w-100">
-			<div class="row">
+			<div class="row mb-3">
 				<div class="col-10">
 					<div class="form-group">
 						<h:inputText id="email" styleClass="form-control" value="#{clienteMB.cliente.email}"/>
@@ -15,29 +15,42 @@
 				</div>
 			</div>
 		</h:form>
-		<div class="row">
-			<div class="col-12">
-				<div class="grid-graficas">
-					<div class="list-grafica-item">
-						<div class="grafica-item-logo"></div>
-						<h2>Gráfica Yellow</h2>
-						<h:link value="Visualizar Gráfica" styleClass="btn btn-primary"/>
+		<div class="row grid-graficas">
+			<!-- Aqui entra o foreach para cada grafica ele deve adicionar um col-3... -->
+			<div class="col-3">
+				<div class="grafica-item">
+					<div class="grafica-item-logo">
+						<h:graphicImage value="../../resources/static/image/grafica-logo.png"/>
 					</div>
-					<div class="list-grafica-item">
-						<div class="grafica-item-logo"></div>
-						<h2>Gráfica Arco-Íris</h2>
-						<h:link value="Visualizar Gráfica" styleClass="btn btn-primary"/>
+					<h3>Gráfica Yellow</h3>
+					<h:link value="Visualizar Gráfica" styleClass="btn btn-primary w-100"/>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="grafica-item">
+					<div class="grafica-item-logo">
+						<h:graphicImage value="../../resources/static/image/grafica-logo.png"/>
 					</div>
-					<div class="list-grafica-item">
-						<div class="grafica-item-logo"></div>
-						<h2>Gráfica Pablo Escobar</h2>
-						<h:link value="Visualizar Gráfica" styleClass="btn btn-primary"/>
+					<h3>Gráfica Arco-Íris</h3>
+					<h:link value="Visualizar Gráfica" styleClass="btn btn-primary w-100"/>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="grafica-item">
+					<div class="grafica-item-logo">
+						<h:graphicImage value="../../resources/static/image/grafica-logo.png"/>
 					</div>
-					<div class="list-grafica-item">
-						<div class="grafica-item-logo"></div>
-						<h2>Gráfica Robocop Gay</h2>
-						<h:link value="Visualizar Gráfica" styleClass="btn btn-primary"/>
+					<h3>Gráfica Purpurina</h3>
+					<h:link value="Visualizar Gráfica" styleClass="btn btn-primary w-100"/>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="grafica-item">
+					<div class="grafica-item-logo">
+						<h:graphicImage value="../../resources/static/image/grafica-logo.png"/>
 					</div>
+					<h3>Gráfica Butterfly</h3>
+					<h:link value="Visualizar Gráfica" styleClass="btn btn-primary w-100"/>
 				</div>
 			</div>
 		</div>
