@@ -14,6 +14,10 @@ public class UsuarioFachada {
 		return usuarioNeg.validaLoginSenha(usuario);
 	}
 	
+	public Usuario getUsuarioLogado(String login, String senha) throws Exception {
+		return usuarioNeg.getUsuario(login, senha);
+	}
+	
 	public boolean tipoLogin(Usuario usuario) throws Exception {
 		return usuarioNeg.loginGrafica(usuario);
 	}

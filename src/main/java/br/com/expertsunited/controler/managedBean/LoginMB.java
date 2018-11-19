@@ -28,24 +28,21 @@ public class LoginMB implements Serializable {
 		this.usuario = usuario;
 	}
 	
-	public String loginGrafica() throws Exception {
+	public String realizarLogin() throws Exception {
 		UsuarioFachada usuarioFach = new UsuarioFachada();
 		if(usuarioFach.login(usuario)) {
 			HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
 			session.setAttribute("usuario", usuario);
-			
-			return "/app/grafica/index?faces-redirect=true";
-		} else {
-			return "/seguranca/login?faces-redirect=true";
-		}
-	}
-	
-	public String loginCliente() throws Exception {
-		UsuarioFachada usuarioFach = new UsuarioFachada();
-		if(usuarioFach.login(usuario)) {
-			HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
-			session.setAttribute("usuario", usuario);
-			
+			UsuarioFachada userFachada = new UsuarioFachada();
+
+			Usuario usuarioLogado = userFachada.getUsuarioLogado(usuario.getLogin(), usuario.getSenha());
+			System.out.println("usuario logado LOGIN: " + usuarioLogado.getLogin());
+			System.out.println("usuario logado SENHA: " + usuarioLogado.getSenha());
+			System.out.println("usuario logado ID: " + usuarioLogado.getIdUsuario());
+			System.out.println("usuario logado IsGrafica: " + usuarioLogado.getIsGrafica());
+			if (usuarioLogado.getIsGrafica() == 1) {
+				return "/app/grafica/index?faces-redirect=true";
+			}
 			return "/app/cliente/index?faces-redirect=true";
 		} else {
 			return "/seguranca/login?faces-redirect=true";

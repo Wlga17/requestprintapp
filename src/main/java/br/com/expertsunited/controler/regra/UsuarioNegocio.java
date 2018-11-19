@@ -25,6 +25,14 @@ public class UsuarioNegocio {
 		return false;
 	}
 	
+	public Usuario getUsuario(String login, String senha) throws Exception {
+		Usuario usuario = usuarioDAO.getUsuario(login, senha);
+		if (usuario != null) {
+			return usuario;
+		}
+		return null;
+	}
+	
 	public boolean loginGrafica(Usuario usuario) throws Exception {
 		Usuario usuarioLogin = usuarioDAO.getUsuario(usuario.getLogin(), usuario.getSenha());
 		if (usuarioLogin != null && usuarioLogin.getIsGrafica() == 1) {
