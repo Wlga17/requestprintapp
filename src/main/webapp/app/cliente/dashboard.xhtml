@@ -1,0 +1,45 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	            xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	            xmlns:h="http://xmlns.jcp.org/jsf/html"
+	            xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<div class="dashboard-cliente">
+		<h:form styleClass="w-100">
+			<div class="row">
+				<div class="col-10">
+					<div class="form-group">
+						<h:inputText id="email" styleClass="form-control" value="#{clienteMB.cliente.email}"/>
+					</div>
+				</div>
+				<div class="col-2">
+					<h:commandButton value="Buscar" styleClass="btn btn-primary w-100"/>
+				</div>
+			</div>
+		</h:form>
+		<div class="row">
+			<div class="col-12">
+				<div class="grid-graficas">
+					<div class="list-grafica-item">
+						<div class="grafica-item-logo"></div>
+						<h2>Gráfica Yellow</h2>
+						<h:link value="Visualizar Gráfica" styleClass="btn btn-primary"/>
+					</div>
+					<div class="list-grafica-item">
+						<div class="grafica-item-logo"></div>
+						<h2>Gráfica Arco-Íris</h2>
+						<h:link value="Visualizar Gráfica" styleClass="btn btn-primary"/>
+					</div>
+					<div class="list-grafica-item">
+						<div class="grafica-item-logo"></div>
+						<h2>Gráfica Pablo Escobar</h2>
+						<h:link value="Visualizar Gráfica" styleClass="btn btn-primary"/>
+					</div>
+					<div class="list-grafica-item">
+						<div class="grafica-item-logo"></div>
+						<h2>Gráfica Robocop Gay</h2>
+						<h:link value="Visualizar Gráfica" styleClass="btn btn-primary"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ui:composition>
