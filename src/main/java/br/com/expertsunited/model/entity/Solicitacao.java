@@ -25,9 +25,9 @@ public class Solicitacao implements Serializable {
 	@Column(name="data_entrega")
 	private String dataEntrega;
 	@Column(name="possui_arquivo")
-	private boolean possuiArquivo;
+	private Boolean possuiArquivo;
 	@Column(name="solicita_arte")
-	private boolean solicitaArte;
+	private Boolean solicitaArte;
 	private String observacao;
 	@ManyToOne
 	@JoinColumn(name="cliente")
@@ -73,19 +73,19 @@ public class Solicitacao implements Serializable {
 		this.dataEntrega = dataEntrega;
 	}
 	
-	public boolean isPossuiArquivo() {
+	public Boolean isPossuiArquivo() {
 		return possuiArquivo;
 	}
 	
-	public void setPossuiArquivo(boolean possuiArquivo) {
+	public void setPossuiArquivo(Boolean possuiArquivo) {
 		this.possuiArquivo = possuiArquivo;
 	}
 	
-	public boolean isSolicitaArte() {
+	public Boolean isSolicitaArte() {
 		return solicitaArte;
 	}
 	
-	public void setSolicitaArte(boolean solicitaArte) {
+	public void setSolicitaArte(Boolean solicitaArte) {
 		this.solicitaArte = solicitaArte;
 	}
 	
@@ -119,5 +119,31 @@ public class Solicitacao implements Serializable {
 	
 	public void setMaterialSolicitacao(List<MaterialSolicitacao> materialSolicitacao) {
 		this.materialSolicitacao = materialSolicitacao;
+	}
+	
+	@Override
+	public String toString() {
+		return this.titulo;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		//se nao forem objetos da mesma classe sao objetos diferentes
+        if(!(obj instanceof Solicitacao)) return false; 
+
+        //se forem o mesmo objeto, retorna true
+        if(obj == this) return true;
+
+        // aqui o cast é seguro por causa do teste feito acima
+        Solicitacao solicitacao = (Solicitacao) obj; 
+
+        //aqui você compara a seu gosto, o ideal é comparar atributo por atributo
+        return this.id == solicitacao.getId() &&
+                this.titulo.equals(solicitacao.getTitulo());
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.id;
 	}
 }

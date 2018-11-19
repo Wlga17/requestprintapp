@@ -89,4 +89,29 @@ public class Grafica extends Usuario implements Serializable {
 	public void setMaterial(List<Material> material) {
 		this.material = material;
 	}
+
+	@Override
+	public String toString() {
+		return this.nome;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		//se nao forem objetos da mesma classe sao objetos diferentes
+        if(!(obj instanceof Grafica)) return false; 
+
+        //se forem o mesmo objeto, retorna true
+        if(obj == this) return true;
+
+        // aqui o cast é seguro por causa do teste feito acima
+        Grafica grafica = (Grafica) obj; 
+
+        //aqui você compara a seu gosto, o ideal é comparar atributo por atributo
+        return this.nome.equals(grafica.getNome());
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.getIdUsuario();
+	}
 }

@@ -1,9 +1,10 @@
 package br.com.expertsunited.controler.managedBean;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.model.SelectItem;
+//import javax.faces.model.SelectItem;
 
 import br.com.expertsunited.facade.GraficaFachada;
 import br.com.expertsunited.facade.PropostaFachada;
@@ -13,12 +14,13 @@ import br.com.expertsunited.model.entity.Proposta;
 import br.com.expertsunited.model.entity.Solicitacao;
 
 @ManagedBean()
-public class PropostaMB {
+public class PropostaMB implements Serializable{
+	private static final long serialVersionUID = 1L;
 
 	private Proposta proposta;
 	private List<Proposta> listaProposta;
-	private List<SelectItem> grafs;
-	private List<SelectItem> sols;
+	private List<Grafica> grafs;
+	private List<Solicitacao> sols;
 	
 	public PropostaMB() {
 		proposta = new Proposta();
@@ -31,7 +33,7 @@ public class PropostaMB {
 	public void setProposta(Proposta proposta) {
 		this.proposta = proposta;
 	}
-	
+
 	public List<Proposta> getListaProposta() {
 		return listaProposta;
 	}
@@ -40,7 +42,7 @@ public class PropostaMB {
 		this.listaProposta = listaProposta;
 	}
 	
-	/*public List<Grafica> getGrafs() {
+	public List<Grafica> getGrafs() {
 		GraficaFachada fg = new GraficaFachada();
 		try {
 			grafs = fg.getListGrafica();
@@ -53,25 +55,8 @@ public class PropostaMB {
 	public void setGrafs(List<Grafica> grafs) {
 		this.grafs = grafs;
 	}
-	*/
-	public List<SelectItem> getGrafs() {
-		GraficaFachada fg = new GraficaFachada();
-		try {
-			for (Grafica g : fg.getListGrafica()) {
-			SelectItem sl = new SelectItem(g.getIdUsuario(), g.getNome());	
-			grafs.add(sl);
-			}
-		} catch (Exception e) {
-			e.getMessage();
-		}
-		return grafs;
-	}
-
-	public void setGrafs(List<SelectItem> grafs) {
-		this.grafs = grafs;
-	}
-
-	/*public List<Solicitacao> getSols() {
+	
+	public List<Solicitacao> getSols() {
 		SolicitacaoFachada fs = new SolicitacaoFachada();
 		try {
 			sols = fs.getListSolicitacao();
@@ -84,24 +69,7 @@ public class PropostaMB {
 	public void setSols(List<Solicitacao> sols) {
 		this.sols = sols;
 	}
-	*/
-	public List<SelectItem> getSols() {
-		SolicitacaoFachada fs = new SolicitacaoFachada();
-		try {
-			for(Solicitacao s : fs.getListSolicitacao()) {
-				SelectItem sl = new SelectItem(s.getId(), s.getTitulo());
-				sols.add(sl);
-			}
-		}catch (Exception e) {
-			e.getMessage();
-		}
-		return sols;
-	}
 
-	public void setSols(List<SelectItem> sols) {
-		this.sols = sols;
-	}
-	
 	public void inserir() {
 		if(this.proposta != null) {
 			PropostaFachada fachada = new PropostaFachada(); 

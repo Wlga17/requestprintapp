@@ -23,20 +23,21 @@
 			<h:inputTextarea id="descricao" rows="5" cols="21" value="#{propostaMB.proposta.descricao}"/>
 			
 			<h:outputLabel for="grafica" value="Grafica: "/>
-			<h:selectOneMenu id="grafica" value="#{propostaMB.proposta.grafica}">
+			<h:selectOneMenu id="grafica" value="#{propostaMB.proposta.grafica}" converter="graficaConverter">
 				<f:selectItem itemLabel="-- Graficas --" noSelectionOption="true"/>
-				<f:selectItems value="#{propostaMB.grafs}" var="vGrafica"
-					itemValue="#{vGrafica}" itemLabel="#{vGrafica.nome}"/>			
+				<f:selectItems value="#{propostaMB.grafs}" var="grafica"
+					itemValue="#{grafica}" itemLabel="#{grafica.nome}"/>			
 			</h:selectOneMenu>
 			
 			<h:outputLabel for="solicitacao" value="Solicitação: "/>
-			<h:selectOneMenu id="solicitacao" value="#{propostaMB.proposta.solicitacao}">
+			<h:selectOneMenu id="solicitacao" value="#{propostaMB.proposta.solicitacao}" converter="solicitacaoConverter">
 				<f:selectItem itemLabel="-- Solicitações --" noSelectionOption="true"/>
-				<f:selectItems	value="#{propostaMB.sols}" var="vSolicitacao"
-					itemValue="#{vSolicitacao}"	itemLabel="#{vSolicitacao.titulo}"/>
+				<f:selectItems	value="#{propostaMB.sols}" var="solicitacao"
+					itemValue="#{solicitacao}"	itemLabel="#{solicitacao.titulo}"/>
 			</h:selectOneMenu> 
 			<br></br>
-			<h:commandButton value="fazer proposta" action="#{propostaMB.inserir}"/>
+			<br></br>
+			<h:commandButton value="Enviar Proposta" action="#{propostaMB.inserir}"/>
 		</h:panelGrid>
 	</h:form>
 </h:body>
