@@ -11,7 +11,7 @@ import br.com.expertsunited.model.entity.Solicitacao;
 public class SolicitacaoMB {
 	
 	private Solicitacao solicitacao;
-	private List<Solicitacao> listaSolicitacao;
+	private List<Solicitacao> sols;
 	
 	public SolicitacaoMB() {
 		solicitacao = new Solicitacao();
@@ -25,12 +25,18 @@ public class SolicitacaoMB {
 		this.solicitacao = solicitacao;
 	}
 
-	public List<Solicitacao> getListaSolicitacao() {
-		return listaSolicitacao;
+	public List<Solicitacao> getSols() {
+		SolicitacaoFachada fs = new SolicitacaoFachada();
+		try {
+			sols = fs.getListSolicitacao();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return sols;
 	}
 
-	public void setListaSolicitacao(List<Solicitacao> listaSolicitacao) {
-		this.listaSolicitacao = listaSolicitacao;
+	public void setSols(List<Solicitacao> sols) {
+		this.sols = sols;
 	}
 	
 	public void inserirSolicitacao() {

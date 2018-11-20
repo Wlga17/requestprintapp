@@ -25,9 +25,9 @@ public class Solicitacao implements Serializable {
 	@Column(name="data_entrega")
 	private String dataEntrega;
 	@Column(name="possui_arquivo")
-	private Boolean possuiArquivo;
+	private int possuiArquivo;
 	@Column(name="solicita_arte")
-	private Boolean solicitaArte;
+	private int solicitaArte;
 	private String observacao;
 	@ManyToOne
 	@JoinColumn(name="cliente")
@@ -73,19 +73,19 @@ public class Solicitacao implements Serializable {
 		this.dataEntrega = dataEntrega;
 	}
 	
-	public Boolean isPossuiArquivo() {
+	public int getPossuiArquivo() {
 		return possuiArquivo;
 	}
 	
-	public void setPossuiArquivo(Boolean possuiArquivo) {
+	public void setPossuiArquivo(int possuiArquivo) {
 		this.possuiArquivo = possuiArquivo;
 	}
 	
-	public Boolean isSolicitaArte() {
+	public int getSolicitaArte() {
 		return solicitaArte;
 	}
 	
-	public void setSolicitaArte(Boolean solicitaArte) {
+	public void setSolicitaArte(int solicitaArte) {
 		this.solicitaArte = solicitaArte;
 	}
 	

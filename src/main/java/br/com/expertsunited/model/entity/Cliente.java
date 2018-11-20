@@ -64,4 +64,9 @@ public class Cliente extends Usuario implements Serializable {
 	public void setSolicitacao(List<Solicitacao> solicitacao) {
 		this.solicitacao = solicitacao;
 	}
+	
+	@Override
+	public String toString() {
+		return this.nome;
+	}
 }
