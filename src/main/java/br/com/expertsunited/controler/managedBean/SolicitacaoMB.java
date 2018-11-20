@@ -50,5 +50,8 @@ public class SolicitacaoMB {
 		}
 	}
 	
+	public String fazerProposta() throws Exception{
+		return "/app/grafica/proposta?faces-redirect=true";
+	}
 
 }

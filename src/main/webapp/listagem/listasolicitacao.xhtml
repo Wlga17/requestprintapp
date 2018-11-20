@@ -8,52 +8,54 @@
 
 <h:body>
 	<h1>Lista de Solicitações Cadastradas</h1>
-	<h:dataTable value="#{SolicitacaoMB.sols}" var="sol" border="1">
-		<h:column>
-			<f:facet name="header">ID</f:facet>
-			#{sol.id}
-		</h:column>
+	<h:form>
+		<h:dataTable value="#{SolicitacaoMB.sols}" var="sol" border="1">
+			<h:column>
+				<f:facet name="header">ID</f:facet>
+				#{sol.id}
+			</h:column>
+				
+			<h:column>
+				<f:facet name="header">Titulo</f:facet>
+				#{sol.titulo}
+			</h:column>
 			
-		<h:column>
-			<f:facet name="header">Titulo</f:facet>
-			#{sol.titulo}
-		</h:column>
-		
-		<h:column>
-			<f:facet name="header">Data da Solicitação</f:facet>
-			#{sol.dataSolicitacao}
-		</h:column>
-		
-		<h:column>
-			<f:facet name="header">Data da Entrega</f:facet>
-			#{sol.dataEntrega}
-		</h:column>
-		
-		<h:column>
-			<f:facet name="header">Possui Arquivo</f:facet>
-			#{sol.possuiArquivo}
-		</h:column>
-		
-		<h:column>
-			<f:facet name="header">Solicita Arte</f:facet>
-			#{sol.solicitaArte}
-		</h:column>
-		
-		<h:column>
-			<f:facet name="header">Observação</f:facet>
-			#{sol.observacao}
-		</h:column>
-		
-		<h:column>
-			<f:facet name="header">Cliente</f:facet>
-			#{sol.cliente}
-		</h:column>
-		
-		<h:column>
-			<f:facet name="header">Ação</f:facet>
-			<h:commandLink value="Proposta" action="/app/grafica/proposta.xhtml"/>
-		</h:column>
-	</h:dataTable>
+			<h:column>
+				<f:facet name="header">Data da Solicitação</f:facet>
+				#{sol.dataSolicitacao}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Data da Entrega</f:facet>
+				#{sol.dataEntrega}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Possui Arquivo</f:facet>
+				#{sol.possuiArquivo}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Solicita Arte</f:facet>
+				#{sol.solicitaArte}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Observação</f:facet>
+				#{sol.observacao}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Cliente</f:facet>
+				#{sol.cliente}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Ação</f:facet>
+				<h:commandLink value="Proposta" action="#{SolicitacaoMB.fazerProposta}"/>
+			</h:column>
+		</h:dataTable>
+	</h:form>
 </h:body>
 
 </html>
