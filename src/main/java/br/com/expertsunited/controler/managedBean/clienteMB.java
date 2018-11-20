@@ -12,6 +12,15 @@ public class clienteMB {
 
 	Cliente cliente = new Cliente();
 	
+	boolean campo = true;
+	
+	public boolean isCampo() {
+		return campo;
+	}
+
+	public void setCampo(boolean campo) {
+		this.campo = campo;
+	}
 	List<Cliente> listaCliente;
 	
 	
@@ -46,5 +55,16 @@ public class clienteMB {
 				e.printStackTrace();
 			}
 		}
+	}
+	public void alterar() {
+		ClienteFachada fachada = new ClienteFachada();
+		try {
+			fachada.updateCF(cliente);
+		}catch(Exception e) {
+			e.getMessage();
+		}
+	}
+	public void desbloquearCampo() {
+		this.campo = false;
 	}
 }
