@@ -28,31 +28,35 @@
 			<div class="col-10">
 			<h1>Nova Solicitação</h1>
 				<h:form>
-					<h:outputLabel for = "titulo" value = "Titulo"/>
-					<h:inputText id = "titulo" value = "#{SolicitacaoMB.solicitacao.titulo}"/><br/>
+				<h:panelGrid columns="2">
+					
+					<h:outputLabel for = "titulo" value = "Titulo "/>
+					<h:inputText id = "titulo" value = "#{SolicitacaoMB.solicitacao.titulo}"/>
+					
+					
+					<h:outputLabel for = "dataSolicitacao" value = "DataSolicitacao "/>
+					<h:inputText id = "dataSolicitacao" value = "#{SolicitacaoMB.solicitacao.dataSolicitacao}"/>
+					
+					
+					<h:outputLabel for = "dataEntrega" value = "DataEntrega "/>
+					<h:inputText id = "dataEntrega" value = "#{SolicitacaoMB.solicitacao.dataEntrega}"/>
+					
+					
+					<h:panelGrid columns="4">
+					<h:outputLabel for = "possuiArquivo" value = "PossuirArquivo "/>
+					<h:selectBooleanCheckbox id = "possuiArquivo" value = "#{SolicitacaoMB.solicitacao.possuiArquivo}"/>
+					
+					<h:outputLabel for = "solicitaArte" value = "SolicitarArte "/>
+					<h:selectBooleanCheckbox id = "solicitaArte" value = "#{SolicitacaoMB.solicitacao.solicitaArte}"/>
+					</h:panelGrid>
 					<br/>
 					
-					<h:outputLabel for = "dataSolicitacao" value = "DataSolicitacao"/>
-					<h:inputText id = "dataSolicitacao" value = "#{SolicitacaoMB.solicitacao.dataSolicitacao}"/><br/>
+					<h:outputLabel for = "observacao" value = "Observacao "/>
+					<h:inputText id = "observacao" value = "#{SolicitacaoMB.solicitacao.observacao}"/>
 					<br/>
-					
-					<h:outputLabel for = "dataEntrega" value = "DataEntrega"/>
-					<h:inputText id = "dataEntrega" value = "#{SolicitacaoMB.solicitacao.dataEntrega}"/><br/>
-					<br/>
-					
-					<h:outputLabel for = "possuiArquivo" value = "PossuiArquivo"/>
-					<!-- <h:selectBooleanCheckbox id = "possuiArquivo" value = "#{SolicitacaoMB.solicitacao.possuiArquivo}"/> -->
-					<br/>
-					
-					<h:outputLabel for = "solicitaArte" value = "SolicitaArte"/>
-					<!-- <h:selectBooleanCheckbox id = "solicitaArte" value = "#{SolicitacaoMB.solicitacao.solicitaArte}"/>  -->
-					
-					<br/>
-					
-					<h:outputLabel for = "observacaoo" value = "Observacao"/>
-					<h:inputText id = "observacao" value = "#{SolicitacaoMB.solicitacao.observacao}"/><br/>
 					<br/>
 					<h:commandButton value = "Finalizar Solicitacao" action = "#{SolicitacaoMB.inserirSolicitacao}"/>
+				</h:panelGrid>
 				</h:form>
 			</div>
 		</div>

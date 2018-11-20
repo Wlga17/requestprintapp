@@ -7,6 +7,7 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:body>
+	
 	<h1>Lista de Solicitações Cadastradas</h1>
 	<h:form>
 		<h:dataTable value="#{SolicitacaoMB.sols}" var="sol" border="1">
@@ -51,9 +52,10 @@
 			</h:column>
 			
 			<h:column>
-				<f:facet name="header">Ação</f:facet>
+				<f:facet name="header">Proposta</f:facet>
 				<h:commandLink value="Proposta" action="#{SolicitacaoMB.fazerProposta}"/>
 			</h:column>
+			
 		</h:dataTable>
 	</h:form>
 </h:body>
