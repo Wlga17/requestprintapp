@@ -36,15 +36,15 @@ body {
 
 /* Body APP */
 body.view-app {
-	margin-top: 103px;	
+	/*margin-top: 68px;	*/
 }
 
 /* Header Cliente e Gráfica */
 #header {
 	width: 100%;
 	background-color: #fff;
-	position: fixed;
-	top: 0;
+	/*position: fixed;*/
+    top: 0;
 	-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.10);
 	-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.10);
 	box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.10);
