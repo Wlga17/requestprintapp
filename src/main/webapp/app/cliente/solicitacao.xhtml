@@ -26,37 +26,64 @@
 				</ui:insert>
 			</div>
 			<div class="col-10">
-			<h1>Nova Solicitação</h1>
+			<h1 class="display-4 text-uppercase mt-3 mb-4">Nova Solicitação</h1>
 				<h:form>
-				<h:panelGrid columns="2">
+					<div class="row">
+						<div class="col-6">
+							<div class="form-group">
+								<h:outputLabel for="titulo" value="Informe um título para sua solicitação"/>
+								<h:inputText id="titulo" styleClass="form-control" value="#{SolicitacaoMB.solicitacao.titulo}"/>
+							</div>
+						</div>
+						
+						<div class="col-2">
+							<div class="form-group">
+								<h:outputLabel for="dataSolicitacao" value="Data da Solicitação"/>
+								<h:inputText id="dataSolicitacao" styleClass="form-control" value="#{SolicitacaoMB.solicitacao.dataSolicitacao}"/>
+							</div>
+						</div>
+						
+						<div class="col-2">
+							<div class="form-group">
+								<h:outputLabel for="dataEntrega" value="Prazo para Entrega"/>
+								<h:inputText id="dataEntrega" styleClass="form-control" value="#{SolicitacaoMB.solicitacao.dataEntrega}"/>
+							</div>
+						</div>
+					</div>
 					
-					<h:outputLabel for = "titulo" value = "Titulo "/>
-					<h:inputText id = "titulo" value = "#{SolicitacaoMB.solicitacao.titulo}"/>
+					<div class="row">
+						<div class="col-12 mt-4">
+							<div class="form-group form-check">
+								<h:selectBooleanCheckbox id="possuiArquivo" styleClass="form-check-input" value="#{SolicitacaoMB.solicitacao.possuiArquivo}"/>
+								<h:outputLabel for="possuiArquivo" styleClass="form-check-label" value="Possui arquivo para impressão?"/>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="form-group form-check">
+								<h:selectBooleanCheckbox id="solicitaArte" styleClass="form-check-input" value="#{SolicitacaoMB.solicitacao.solicitaArte}"/>
+								<h:outputLabel for="solicitaArte" styleClass="form-check-label" value="Solicitar criação de arte?"/>
+							</div>
+						</div>
+					</div>
 					
+					<div class="row">
+						<div class="col-10">
+							<div class="form-group mt-4">
+								<h:outputLabel for="observacao"  value="Informe aqui os materias que deseja solicitar"/>
+								<h:inputTextarea id="observacao" styleClass="form-control" rows="8" value="#{SolicitacaoMB.solicitacao.observacao}"/>
+							</div>
+						</div>
+					</div>
 					
-					<h:outputLabel for = "dataSolicitacao" value = "DataSolicitacao "/>
-					<h:inputText id = "dataSolicitacao" value = "#{SolicitacaoMB.solicitacao.dataSolicitacao}"/>
-					
-					
-					<h:outputLabel for = "dataEntrega" value = "DataEntrega "/>
-					<h:inputText id = "dataEntrega" value = "#{SolicitacaoMB.solicitacao.dataEntrega}"/>
-					
-					
-					<h:panelGrid columns="4">
-					<h:outputLabel for = "possuiArquivo" value = "PossuirArquivo "/>
-					<h:selectBooleanCheckbox id = "possuiArquivo" value = "#{SolicitacaoMB.solicitacao.possuiArquivo}"/>
-					
-					<h:outputLabel for = "solicitaArte" value = "SolicitarArte "/>
-					<h:selectBooleanCheckbox id = "solicitaArte" value = "#{SolicitacaoMB.solicitacao.solicitaArte}"/>
-					</h:panelGrid>
-					<br/>
-					
-					<h:outputLabel for = "observacao" value = "Observacao "/>
-					<h:inputText id = "observacao" value = "#{SolicitacaoMB.solicitacao.observacao}"/>
-					<br/>
-					<br/>
-					<h:commandButton value = "Finalizar Solicitacao" action = "#{SolicitacaoMB.inserirSolicitacao}"/>
-				</h:panelGrid>
+					<div class="row">
+						<div class="col-10">
+							<div class="row justify-content-end">
+								<div class="col-4 mt-4">
+									<h:commandButton value="Publicar Solicitação" styleClass="btn btn-primary w-100" action="#{SolicitacaoMB.inserirSolicitacao}"/>
+								</div>
+							</div>
+						</div>
+					</div>
 				</h:form>
 			</div>
 		</div>
