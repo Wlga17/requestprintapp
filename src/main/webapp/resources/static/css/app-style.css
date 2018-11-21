@@ -103,11 +103,6 @@ body.view-app {
 	color: #ffc107;
 }
 
-/* Dashboards Cliente e Grafica */
-.dashboard-cliente {
-	margin-top: 4rem;
-}
-
 .grafica-item-logo {
 	width: 100%;
 	height: 200px;
