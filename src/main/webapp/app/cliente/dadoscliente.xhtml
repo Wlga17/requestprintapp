@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+  <meta http-equiv="Contenty-type" content="text/html;  charset=UTF-8"/>
+  <title>Request Print</title>
+  <h:outputStylesheet library="static" name="css/bootstrap.min.css"></h:outputStylesheet>
+  <h:outputStylesheet library="static" name="css/app-style.css"></h:outputStylesheet>
+</h:head>
+
+<ui:insert xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	<ui:include src="/includes/header-cliente.xhtml"/>
+</ui:insert>
+
+<h:body class="view-app">
+	<div class="container-fluid pl-0">
+		<div class="row">
+			<div class="col-2">
+				<ui:insert xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+					<ui:include src="/includes/menu-cliente.xhtml"/>
+				</ui:insert>
+			</div>
+			<div class="col-10">
+				<h:form>
+					<h:outputLabel for="alterarNome" value="Altere seu nome"/>
+					<h:inputText id="alterarNome" value="#{clienteMB.cliente.nome}" disabled="#{clienteMB.campo}"/><br/>
+					<br/>
+					
+					<h:outputLabel for="alterarTelefone" value="Altere seu telefone"/>
+					<h:inputText id="telefone" value="#{clienteMB.cliente.telefone}" disabled="#{clienteMB.campo}"/><br/>
+					<br/>
+					
+					<h:outputLabel for="alterarEmail" value="Altere seu email"/>
+					<h:inputText id="email" value="#{clienteMB.cliente.email}" disabled="#{clienteMB.campo}"/><br/>
+					<br/>
+			
+					<h:outputLabel for="alterarCnpj" value="Altere seu cnpj"/>
+					<h:inputText id="cnpj" value="#{clienteMB.cliente.cnpj}" disabled="#{clienteMB.campo}"/><br/>
+					<br/>
+					
+					<h:commandButton value = "Alterar" action = "#{clienteMB.desbloquearCampo}"/>
+					<h:commandButton value = "Finalizar Alteracao" action = "#{clienteMB.alterar}"/>
+				</h:form>
+			</div>
+		</div>
+	</div>
+</h:body>
+
+</html>

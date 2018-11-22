@@ -107,7 +107,6 @@ public class GraficaDAO implements IGraficaDAO {
 		try {
 			graficas = eManager.createQuery("SELECT g FROM Grafica g WHERE g.nome LIKE :nome")
 					.setParameter("nome", "%" + nome.toLowerCase() + "%").getResultList();
-			return graficas;
 		} catch(Exception exp) {
 			exp.printStackTrace();
 			eManager.getTransaction().rollback();
@@ -115,5 +114,6 @@ public class GraficaDAO implements IGraficaDAO {
 		} finally {
 			eManager.close();
 		}
+		return graficas;
 	}
 }

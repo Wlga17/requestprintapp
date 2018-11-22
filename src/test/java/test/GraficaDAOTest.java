@@ -63,12 +63,12 @@ public class GraficaDAOTest {
 //		System.out.println(grafica.getNome());
 //	}
 	
-//	@Test 
-//	public void getByNameTest() {
-//		GraficaDAO graficaDAO = new GraficaDAO();
-//		
-//		for(Grafica g: graficaDAO.getByName("Gráfica")) {
-//			System.out.println("Gráfica: " + g.getNome());
-//		}
-//	}
+	@Test 
+	public void getByNameTest() {
+		GraficaDAO graficaDAO = new GraficaDAO();
+		
+		for(Grafica g: graficaDAO.getByName("yeLLow")) {
+			System.out.println("Gráfica: " + g.getNome());
+		}
+	}
 }

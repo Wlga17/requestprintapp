@@ -1,45 +1,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
-
+      
 <h:head>
   <meta http-equiv="Contenty-type" content="text/html;  charset=UTF-8"/>
   <title>Request Print</title>
+  <h:outputStylesheet library="static" name="css/bootstrap.min.css"></h:outputStylesheet>
+  <h:outputStylesheet library="static" name="css/app-style.css"></h:outputStylesheet>
 </h:head>
 
-<h:body>
-	<h1>Cadastrar Proposta</h1>
-	<h:form>
-		<h:panelGrid columns="2">
-			
-			<h:outputLabel for="data" value="Data da Propota: "/>
-			<h:inputText id="data" value="#{propostaMB.proposta.dataProposta}"/>
-			
-			<h:outputLabel for="descricao" value="Descrição: "/>
-			<h:inputTextarea id="descricao" rows="5" cols="21" value="#{propostaMB.proposta.descricao}"/>
-			
-			<h:outputLabel for="grafica" value="Grafica: "/>
-			<h:selectOneMenu id="grafica" value="#{propostaMB.proposta.grafica}" converter="graficaConverter">
-				<f:selectItem itemLabel="-- Graficas --" noSelectionOption="true"/>
-				<f:selectItems value="#{propostaMB.grafs}" var="grafica"
-					itemValue="#{grafica}" itemLabel="#{grafica.nome}"/>			
-			</h:selectOneMenu>
-			
-			<h:outputLabel for="solicitacao" value="Solicitação: "/>
-			<h:selectOneMenu id="solicitacao" value="#{propostaMB.proposta.solicitacao}" converter="solicitacaoConverter">
-				<f:selectItem itemLabel="-- Solicitações --" noSelectionOption="true"/>
-				<f:selectItems	value="#{propostaMB.sols}" var="solicitacao"
-					itemValue="#{solicitacao}"	itemLabel="#{solicitacao.titulo}"/>
-			</h:selectOneMenu> 
-			<br></br>
-			<br></br>
-			<h:commandButton value="Enviar Proposta" action="#{propostaMB.inserir}"/>
-		</h:panelGrid>
-	</h:form>
-</h:body>
+<ui:insert xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	<ui:include src="/includes/header-cliente.xhtml"/>
+</ui:insert>
 
+<h:body class="view-app">
+	<div class="container-fluid pl-0">
+		<div class="row">
+			<div class="col-2">
+				<ui:insert xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+					<ui:include src="/includes/menu-grafica.xhtml"/>
+				</ui:insert>
+			</div>
+			<div class="col-10">
+				<h1>Cadastrar Proposta</h1>
+				<h:form>
+					<h:panelGrid columns="2">
+						<h:outputLabel for="data" value="Data da Propota: "/>
+						<h:inputText id="data" value="#{propostaMB.proposta.dataProposta}"/>
+						
+						<h:outputLabel for="descricao" value="Descrição: "/>
+						<h:inputTextarea id="descricao" rows="5" cols="21" value="#{propostaMB.proposta.descricao}"/>
+						
+						<h:outputLabel for="grafica" value="Grafica: "/>
+						<h:selectOneMenu id="grafica" value="#{propostaMB.proposta.grafica}" converter="graficaConverter">
+							<f:selectItem itemLabel="-- Graficas --" noSelectionOption="true"/>
+							<f:selectItems value="#{propostaMB.grafs}" var="grafica"
+								itemValue="#{grafica}" itemLabel="#{grafica.nome}"/>			
+						</h:selectOneMenu>
+						
+						<h:outputLabel for="solicitacao" value="Solicitação: "/>
+						<h:selectOneMenu id="solicitacao" value="#{propostaMB.proposta.solicitacao}" converter="solicitacaoConverter">
+							<f:selectItem itemLabel="-- Solicitações --" noSelectionOption="true"/>
+							<f:selectItems	value="#{propostaMB.sols}" var="solicitacao"
+								itemValue="#{solicitacao}"	itemLabel="#{solicitacao.titulo}"/>
+						</h:selectOneMenu> 
+						<br></br>
+						<br></br>
+						<h:commandButton value="Enviar Proposta" action="#{propostaMB.inserir}"/>
+					</h:panelGrid>
+				</h:form>
+			</div>
+		</div>
+	</div>
+</h:body>	
 </html>
