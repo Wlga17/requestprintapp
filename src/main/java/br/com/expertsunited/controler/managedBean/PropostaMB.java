@@ -18,9 +18,9 @@ public class PropostaMB implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private Proposta proposta;
-	private List<Proposta> listaProposta;
+	private List<Proposta> props;
 	private List<Grafica> grafs;
-	private List<Solicitacao> sols;
+	//private List<Solicitacao> sols;
 	
 	public PropostaMB() {
 		proposta = new Proposta();
@@ -34,12 +34,18 @@ public class PropostaMB implements Serializable{
 		this.proposta = proposta;
 	}
 
-	public List<Proposta> getListaProposta() {
-		return listaProposta;
+	public List<Proposta> getProps() {
+		PropostaFachada fp = new PropostaFachada();
+		try {
+			props = fp.getListPropotaByGrafica();
+		}catch(Exception ex) {
+			ex.getMessage();
+		}
+		return props;
 	}
 
-	public void setListaProposta(List<Proposta> listaProposta) {
-		this.listaProposta = listaProposta;
+	public void setProps(List<Proposta> props) {
+		this.props = props;
 	}
 	
 	public List<Grafica> getGrafs() {
@@ -55,7 +61,7 @@ public class PropostaMB implements Serializable{
 	public void setGrafs(List<Grafica> grafs) {
 		this.grafs = grafs;
 	}
-	
+	/*
 	public List<Solicitacao> getSols() {
 		SolicitacaoFachada fs = new SolicitacaoFachada();
 		try {
@@ -69,7 +75,7 @@ public class PropostaMB implements Serializable{
 	public void setSols(List<Solicitacao> sols) {
 		this.sols = sols;
 	}
-
+	*/
 	public void inserir() {
 		if(this.proposta != null) {
 			PropostaFachada fachada = new PropostaFachada(); 

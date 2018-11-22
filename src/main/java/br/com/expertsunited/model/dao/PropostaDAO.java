@@ -3,6 +3,8 @@ package br.com.expertsunited.model.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import br.com.expertsunited.model.JPAUtil.UtilJPA;
 import br.com.expertsunited.model.entity.Proposta;
@@ -69,7 +71,8 @@ public class PropostaDAO implements IPropostaDAO {
 	public List<Proposta> getList() {
 		List<Proposta> propostas = null;
 		try {
-			propostas = eManager.createQuery("FROM Proposta").getResultList();
+			Query consulta = eManager.createQuery("SELECT p FROM Proposta p");
+			propostas = consulta.getResultList();
 
 		}catch(Exception exp) {
 			exp.printStackTrace();
@@ -95,6 +98,24 @@ public class PropostaDAO implements IPropostaDAO {
 			eManager.close();
 		}
 		return proposta;
+	}
+
+	/**
+	 * Método para listar todas os objetos Proposta da grafica
+	 * que estiver logada no site 
+	 */
+	public List<Proposta> getListByIDGrafica() {
+		List<Proposta> propostas = null;
+		try {
+			String consulta = "SELECT p FROM Proposta p where p.grafica = '3'";
+			TypedQuery<Proposta> lista = eManager.createQuery(consulta, Proposta.class);
+			propostas = lista.getResultList();
+		} catch(Exception ex) {
+			eManager.getTransaction().rollback();
+		} finally {
+			eManager.close();
+		}
+		return propostas;
 	}
 
 }

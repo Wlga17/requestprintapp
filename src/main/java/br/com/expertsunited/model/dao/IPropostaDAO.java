@@ -9,4 +9,5 @@ public interface IPropostaDAO {
 	public void remove(Proposta proposta);
 	public List<Proposta> getList();
 	public Proposta getByID(int id);
+	public List<Proposta> getListByIDGrafica();
 }

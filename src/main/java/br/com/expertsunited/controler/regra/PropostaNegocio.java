@@ -67,4 +67,13 @@ public class PropostaNegocio {
 			throw new Exception("Erro: " + ex.getMessage());
 		}
 	}
+	
+	public List<Proposta> listarPropotaPorGrafica() throws Exception{
+		try {
+			List<Proposta> lista = daoProposta.getListByIDGrafica();
+			return lista;
+		}catch(Exception ex) {
+			throw new Exception("Erro: " + ex.getMessage());
+		}
+	}
 }

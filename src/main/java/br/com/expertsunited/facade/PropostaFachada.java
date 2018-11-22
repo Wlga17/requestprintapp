@@ -59,4 +59,13 @@ public class PropostaFachada {
 	public List<Proposta> getListProposta() throws Exception{
 		return propostaNegocio.listarTodasProposta();
 	}
+	
+	/**
+     * Retorna a lista de todos as Propostas de uma certa grafica
+     * @return Lista de Proposta
+     * @throws Exception
+     */
+	public List<Proposta> getListPropotaByGrafica() throws Exception{
+		return propostaNegocio.listarPropotaPorGrafica();
+	}
 }
