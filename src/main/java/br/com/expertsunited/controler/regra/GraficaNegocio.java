@@ -85,4 +85,14 @@ public class GraficaNegocio {
 		}
 	}
 	
+	public List<Grafica> buscarPorNomeGrafica(String nome) throws Exception{
+		try {
+			List<Grafica> grafica = daoGrafica.getByName(nome);
+			return grafica;
+		}
+		catch(Exception ex) {
+			throw new Exception("Erro:" + ex.getMessage());
+		}
+	}
+	
 }

@@ -10,4 +10,5 @@ public interface IGraficaDAO {
 	public void remove(Grafica grafica);
 	public List<Grafica> getList();
 	public Grafica getByID(int id);
+	public List<Grafica> getByName(String nome);
 }

@@ -62,4 +62,13 @@ public class GraficaDAOTest {
 //		Grafica grafica = graficaDao.getByID(1);
 //		System.out.println(grafica.getNome());
 //	}
+	
+//	@Test 
+//	public void getByNameTest() {
+//		GraficaDAO graficaDAO = new GraficaDAO();
+//		
+//		for(Grafica g: graficaDAO.getByName("Gráfica")) {
+//			System.out.println("Gráfica: " + g.getNome());
+//		}
+//	}
 }

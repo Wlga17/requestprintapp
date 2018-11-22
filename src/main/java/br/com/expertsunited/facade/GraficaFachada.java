@@ -60,4 +60,14 @@ public class GraficaFachada {
 		return graNeg.listaGrafica();
 	}
 	
+	/**
+   * Retorna uma Gráfica baseado no dado passado
+   * @param id ID da Gráfica a ser consultado
+   * @return A Gráfica encontrada ou NULL
+   * @throws Exception
+   */
+	public List<Grafica> getByNameGrafica(String nome) throws Exception{
+		return graNeg.buscarPorNomeGrafica(nome);
+	}
+	
 }

@@ -4,5 +4,12 @@
    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
    http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd" 
    version="2.0"> 
-   
+   <!-- <navigation-rule>
+   		<from-view-id>/app/cliente/index.xhtml</from-view-id>
+   		<navigation-case>
+   			<from-outcome>busca-grafica</from-outcome>
+   			<to-view-id>/app/cliente/resultadobusca.xhtml</to-view-id>
+   			<redirect />
+   		</navigation-case>
+   </navigation-rule> -->
 </faces-config>

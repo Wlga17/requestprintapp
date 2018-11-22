@@ -96,4 +96,24 @@ public class GraficaDAO implements IGraficaDAO {
 		}
 		return grafica;
 	}
+	
+	/**
+	 * Método para buscar um objeto Grafica informando seu Nome
+	 * @param nome
+	 */
+	@SuppressWarnings("unchecked")
+	public List<Grafica> getByName(String nome) {
+		List<Grafica> graficas = null;
+		try {
+			graficas = eManager.createQuery("SELECT g FROM Grafica g WHERE g.nome LIKE :nome")
+					.setParameter("nome", "%" + nome.toLowerCase() + "%").getResultList();
+			return graficas;
+		} catch(Exception exp) {
+			exp.printStackTrace();
+			eManager.getTransaction().rollback();
+			return null;
+		} finally {
+			eManager.close();
+		}
+	}
 }

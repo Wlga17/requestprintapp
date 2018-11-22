@@ -12,7 +12,17 @@ public class GraficaMB {
 	
 	private Grafica grafica;
 	private List<Grafica> listar;
+	private List<Grafica> listarResultado;
+	private String nomeGrafica;
 	
+	public String getNomeGrafica() {
+		return nomeGrafica;
+	}
+
+	public void setNomeGrafica(String nomeGrafica) {
+		this.nomeGrafica = nomeGrafica;
+	}
+
 	public GraficaMB() {
 		grafica = new Grafica();
 	}
@@ -39,6 +49,13 @@ public class GraficaMB {
 		this.listar = listar;
 	}
 	
+	
+	public String pesquisarGrafica() throws Exception {
+		GraficaFachada fachada = new GraficaFachada();
+		this.listarResultado = fachada.getByNameGrafica(nomeGrafica);
+		return "Faltar terminar ainda";
+	}
+	
 	public void inserir() {
 		getGrafica().setIsGrafica(1);
 		if (this.grafica != null) {
@@ -50,4 +67,6 @@ public class GraficaMB {
 			}
 		}
 	}
+	
+	
 }
