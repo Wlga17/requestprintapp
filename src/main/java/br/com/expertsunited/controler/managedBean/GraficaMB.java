@@ -1,16 +1,20 @@
 package br.com.expertsunited.controler.managedBean;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 
 import br.com.expertsunited.facade.GraficaFachada;
 import br.com.expertsunited.model.entity.Grafica;
 
-@ManagedBean()
-public class graficaMB {
-	Grafica grafica = new Grafica();
+@ManagedBean(name ="GraficaMB")
+public class GraficaMB {
 	
-	public graficaMB() {
-		// TODO Auto-generated constructor stub
+	private Grafica grafica;
+	private List<Grafica> listar;
+	
+	public GraficaMB() {
+		grafica = new Grafica();
 	}
 
 	public Grafica getGrafica() {
@@ -19,6 +23,20 @@ public class graficaMB {
 
 	public void setGrafica(Grafica grafica) {
 		this.grafica = grafica;
+	}
+	
+	public List<Grafica> getListar() {
+		GraficaFachada fachada = new GraficaFachada();
+		try {
+			listar = fachada.getListGrafica();
+		} catch(Exception exp) {
+			exp.printStackTrace();
+		}
+		return listar;
+	}
+	
+	public void setListar(List<Grafica> listar) {
+		this.listar = listar;
 	}
 	
 	public void inserir() {

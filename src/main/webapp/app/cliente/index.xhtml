@@ -40,43 +40,18 @@
 					</div>
 				</h:form>
 				<div class="row grid-graficas">
-					<!-- Aqui entra o foreach para cada grafica ele deve adicionar um col-3... -->
-					<div class="col-3">
-						<div class="grafica-item">
-							<div class="grafica-item-logo">
-								<h:graphicImage value="../../resources/static/image/grafica-logo.png"/>
+					<ui:repeat value="#{GraficaMB.listar}" var="grafica">
+						<div class="col-3">
+							<div class="grafica-item">
+								<div class="grafica-item-logo">
+									<h:graphicImage value="../../resources/static/image/grafica-logo.png"/>
+								</div>
+								<h3 class="mb-0">#{grafica.nome}</h3>
+								<p>Contato: #{grafica.telefone}</p>
+								<h:link value="Visualizar Gráfica" styleClass="btn btn-primary w-100"/>
 							</div>
-							<h3>Gráfica Yellow</h3>
-							<h:link value="Visualizar Gráfica" styleClass="btn btn-primary w-100"/>
 						</div>
-					</div>
-					<div class="col-3">
-						<div class="grafica-item">
-							<div class="grafica-item-logo">
-								<h:graphicImage value="../../resources/static/image/grafica-logo.png"/>
-							</div>
-							<h3>Gráfica Arco-Íris</h3>
-							<h:link value="Visualizar Gráfica" styleClass="btn btn-primary w-100"/>
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="grafica-item">
-							<div class="grafica-item-logo">
-								<h:graphicImage value="../../resources/static/image/grafica-logo.png"/>
-							</div>
-							<h3>Gráfica Purpurina</h3>
-							<h:link value="Visualizar Gráfica" styleClass="btn btn-primary w-100"/>
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="grafica-item">
-							<div class="grafica-item-logo">
-								<h:graphicImage value="../../resources/static/image/grafica-logo.png"/>
-							</div>
-							<h3>Gráfica Butterfly</h3>
-							<h:link value="Visualizar Gráfica" styleClass="btn btn-primary w-100"/>
-						</div>
-					</div>
+					</ui:repeat>
 				</div>
 			</div>
 		</div>

@@ -36,10 +36,7 @@ public class LoginMB implements Serializable {
 			UsuarioFachada userFachada = new UsuarioFachada();
 
 			Usuario usuarioLogado = userFachada.getUsuarioLogado(usuario.getLogin(), usuario.getSenha());
-			System.out.println("usuario logado LOGIN: " + usuarioLogado.getLogin());
-			System.out.println("usuario logado SENHA: " + usuarioLogado.getSenha());
-			System.out.println("usuario logado ID: " + usuarioLogado.getIdUsuario());
-			System.out.println("usuario logado IsGrafica: " + usuarioLogado.getIsGrafica());
+			
 			if (usuarioLogado.getIsGrafica() == 1) {
 				return "/app/grafica/index?faces-redirect=true";
 			}

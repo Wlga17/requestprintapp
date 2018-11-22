@@ -78,7 +78,7 @@ public class GraficaNegocio {
 	public List<Grafica> listaGrafica() throws Exception{
 		try {
 			List<Grafica> lista = daoGrafica.getList();
-			return(lista);
+			return lista;
 		}
 		catch(Exception ex){
 			throw new Exception("Erro:" + ex.getMessage() );

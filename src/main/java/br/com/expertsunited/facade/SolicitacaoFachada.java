@@ -14,48 +14,48 @@ public class SolicitacaoFachada {
 	}
 	
 	/**
-     * Chama as regras de negocio para cadastro de uma Solicitacao
-     * @param solicitacao Todos os dados da Solicitacao
-     * @throws Exception
-     */
+   * Chama as regras de negocio para cadastro de uma Solicitacao
+   * @param solicitacao Todos os dados da Solicitacao
+   * @throws Exception
+   */
 	public void createSolicitacao(Solicitacao solicitacao) throws Exception{
 		solNeg.validarNuloSolicitacao(solicitacao);
 		solNeg.inserirSolicitacao(solicitacao);
 	}
 	
 	/**
-     * Atualiza os dados de uma Solicitacao
-     * @param solicitacao Dados da Solicitacao
-     * @throws Exception
-     */
+   * Atualiza os dados de uma Solicitacao
+   * @param solicitacao dados da solicitacao
+   * @throws Exception
+   */
 	public void updateSolicitacao(Solicitacao solicitacao) throws Exception{
 		solNeg.alterarSolicitacao(solicitacao);
 	}
 	
 	/**
-     * Remove um registro do banco de dados
-     * @param solicitacao Dados da Solicitacao a ser excluido
-     * @throws Exception
-     */
+   * Remove um registro do banco de dados
+   * @param solicitacao dados da solicitacao a ser excluído
+   * @throws Exception
+   */
 	public void removeSolicitacao(Solicitacao solicitacao) throws Exception{
 		solNeg.removerSolicitacao(solicitacao);
 	}
 	
 	/**
-     * Retorna uma Solicitacao baseado no dado passado
-     * @param id ID da Solicitacao a ser consultado
-     * @return A Solicitacao encontrado ou NULL
-     * @throws Exception
-     */
+   * Retorna uma Solicitacao baseado no dado passado
+   * @param id ID da Solicitacao a ser consultado
+   * @return A Solicitacao encontrado ou NULL
+   * @throws Exception
+   */
 	public Solicitacao getByIdSolicitacao(int id) throws Exception{
 		return solNeg.buscarPorIdSolicitacao(id);
 	}
 	
 	/**
-     * Retorna a lista de todos as Solicitacao
-     * @return Lista de Solicitacao
-     * @throws Exception
-     */
+   * Retorna a lista de todos as Solicitações
+   * @return Lista de Solicitacao
+   * @throws Exception
+   */
 	public List<Solicitacao> getListSolicitacao() throws Exception{
 		return solNeg.listarTodasSolicitacoes();
 	}
