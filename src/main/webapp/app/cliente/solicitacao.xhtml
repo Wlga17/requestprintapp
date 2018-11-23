@@ -29,7 +29,7 @@
 			<h1 class="display-4 text-uppercase mt-3 mb-4">Nova Solicitação</h1>
 				<h:form>
 					<div class="row">
-					<p>#{SolicitacaoMB.solicitacao.cliente = loginMB.login}</p>
+					<p class="d-none">#{SolicitacaoMB.solicitacao.cliente = loginMB.login}</p>
 					<h:inputHidden value="#{SolicitacaoMB.solicitacao.cliente}" converter="clienteConverter"/>	
 						<div class="col-6">
 							<div class="form-group">

@@ -11,7 +11,7 @@ import br.com.expertsunited.facade.ClienteFachada;
 import br.com.expertsunited.facade.GraficaFachada;
 import br.com.expertsunited.model.entity.Grafica;
 
-@ManagedBean(name ="graficaMB")
+@ManagedBean(name ="GraficaMB")
 @SessionScoped
 public class GraficaMB implements Serializable {
 	private static final long serialVersionUID = 1L;
