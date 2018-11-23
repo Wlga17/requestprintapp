@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.event.AjaxBehaviorEvent;
 
 import br.com.expertsunited.facade.ClienteFachada;
 import br.com.expertsunited.model.entity.Cliente;
@@ -49,12 +50,19 @@ public class ClienteMB implements Serializable {
 	
 	
 	
-	public void inserir() {
+	public void inserir(AjaxBehaviorEvent event) {
 		getCliente().setIsGrafica(0);
 		if(this.cliente != null) {
 			ClienteFachada fachada = new ClienteFachada();
 			try {
-				fachada.createCF(cliente);
+				fachada.createCF(cliente, event);
+				fachada.createCF(cliente, event);
+				cliente.setNome(null);
+				cliente.setCnpj(null);
+				cliente.setEmail(null);
+				cliente.setLogin(null);
+				cliente.setSenha(null);
+				cliente.setTelefone(null);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -2,6 +2,8 @@ package br.com.expertsunited.facade;
 
 import java.util.List;
 
+import javax.faces.event.AjaxBehaviorEvent;
+
 import br.com.expertsunited.controler.regra.ClienteNegocio;
 import br.com.expertsunited.model.entity.Cliente;
 
@@ -20,9 +22,9 @@ public class ClienteFachada {
      * @param cliente Todos os dados do Cliente
      * @throws Exception
      */
-	public void createCF(Cliente cliente) throws Exception {
+	public void createCF(Cliente cliente, AjaxBehaviorEvent event) throws Exception {
 		//cliNeg.validarNuloCF(cliente);
-		cliNeg.inserirCliente(cliente);
+		cliNeg.inserirCliente(cliente, event);
 	}
 	
 	/**

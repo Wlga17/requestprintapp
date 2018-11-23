@@ -21,26 +21,28 @@
 							<h:graphicImage value="../resources/static/image/request-print-2.png"/>
 						</div>
 						<h:form>
+						<h:outputScript name = "jsf.js" library = "javax.faces" target = "head"/>
 							<p class="text-center mb-3">Realize seu Cadastro</p>
+							<h:messages id = "msg"/>
 							<div class="form-group">
 								<h:outputLabel for="nome" value="Nome"/>
-								<h:inputText id="nome" styleClass="form-control" value="#{clienteMB.cliente.nome}"/>
+								<h:inputText id="nome" styleClass="form-control" value="#{clienteMB.cliente.nome}" required = "true" requiredMessage = "preenchimento do campo nome obrigatório!"/>
 							</div>
 							<div class="form-group">
 								<h:outputLabel for="email" value="Email"/>
-								<h:inputText id="email" styleClass="form-control" value="#{clienteMB.cliente.email}"/>
+								<h:inputText id="email" styleClass="form-control" value="#{clienteMB.cliente.email}" required = "true" requiredMessage = "preenchimento do campo email obrigatório!"/>
 							</div>
 							<div class="row">
 								<div class="col-6">
 									<div class="form-group">
 										<h:outputLabel for="telefone" value="Telefone"/>
-										<h:inputText id="telefone" styleClass="form-control" value="#{clienteMB.cliente.telefone}"/>
+										<h:inputText id="telefone" styleClass="form-control" value="#{clienteMB.cliente.telefone}" required = "true" requiredMessage = "preenchimento do campo telefone obrigatório!"/>
 									</div>
 								</div>
 								<div class="col-6">
 									<div class="form-group">
 										<h:outputLabel for="cnpj" value="CNPJ"/>
-										<h:inputText id="cnpj" styleClass="form-control" value="#{clienteMB.cliente.cnpj}"/>
+										<h:inputText id="cnpj" styleClass="form-control" value="#{clienteMB.cliente.cnpj}" required = "true" requiredMessage = "preenchimento do campo cnpj obrigatório!" />
 									</div>
 								</div>
 							</div>
@@ -52,7 +54,9 @@
 								<h:outputLabel for="senha" value="Senha"/>
 								<h:inputSecret id="senha" styleClass="form-control" value="#{clienteMB.cliente.senha}"/>
 							</div>
-							<h:commandButton value="Finalizar Cadastro" styleClass="btn btn-warning w-100" action="#{clienteMB.inserir}"/>
+							<h:commandButton value="Finalizar Cadastro" styleClass="btn btn-warning w-100">
+								<f:ajax listener="#{clienteMB.inserir}" execute = "@all" render = "@all" event = "click"/>
+							</h:commandButton>
 						</h:form>
 					</div>
 				</div>

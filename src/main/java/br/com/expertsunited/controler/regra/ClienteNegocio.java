@@ -2,6 +2,10 @@ package br.com.expertsunited.controler.regra;
 
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import javax.faces.event.AjaxBehaviorEvent;
+
 import br.com.expertsunited.model.dao.ClienteDAO;
 import br.com.expertsunited.model.dao.IClienteDAO;
 import br.com.expertsunited.model.entity.Cliente;
@@ -38,9 +42,16 @@ public class ClienteNegocio {
 //		}
 	}
 		
-	public void inserirCliente(Cliente cliente) throws Exception{
+	public void inserirCliente(Cliente cliente, AjaxBehaviorEvent event) throws Exception{
 		try {
 			clienteDAO.create(cliente);
+			System.out.println("passou aqui");
+			FacesContext
+			.getCurrentInstance()
+			.addMessage(
+					null,
+					new FacesMessage("Cliente cadastrado com sucesso!!!")
+					);
 		}catch(Exception ex) {
 			throw new Exception("Erro: " + ex.getMessage());
 		}

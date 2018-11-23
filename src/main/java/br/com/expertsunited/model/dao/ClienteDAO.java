@@ -16,6 +16,7 @@ public class ClienteDAO implements IClienteDAO {
 	 */
 	public void create(Cliente cliente) {
 		try {
+			System.out.println("chegou aqui");
 			eManager.getTransaction().begin();
 			eManager.persist(cliente);
 			eManager.getTransaction().commit();
