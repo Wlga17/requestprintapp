@@ -27,6 +27,8 @@
 			</div>
 			<div class="col-10">
 				<h:form>
+					<h:inputHidden value="#{loginMB.login.idUsuario}"></h:inputHidden>
+					<p>#{loginMB.cliente.nome}</p>
 					<h:outputLabel for="alterarNome" value="Altere seu nome"/>
 					<h:inputText id="alterarNome" value="#{clienteMB.cliente.nome}" disabled="#{clienteMB.campo}"/><br/>
 					<br/>
