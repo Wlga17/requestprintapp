@@ -1,5 +1,6 @@
 package br.com.expertsunited.controler.managedBean;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -8,8 +9,9 @@ import br.com.expertsunited.facade.SolicitacaoFachada;
 import br.com.expertsunited.model.entity.Solicitacao;
 
 @ManagedBean(name = "SolicitacaoMB")
-public class SolicitacaoMB {
-	
+public class SolicitacaoMB implements Serializable{
+	private static final long serialVersionUID = 1L;
+
 	private Solicitacao solicitacao;
 	private List<Solicitacao> sols;
 	
