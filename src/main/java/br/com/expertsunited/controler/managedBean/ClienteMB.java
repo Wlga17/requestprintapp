@@ -15,20 +15,24 @@ public class ClienteMB implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Cliente cliente;
-	private boolean campo;
+	public boolean campo = true;
 	@ManagedProperty(value="#{loginMB.cliente}")
 	private Cliente cli;
 	
-	
-	
-
-
 	public Cliente getCli() {
 		return cli;
 	}
-
+	
 	public void setCli(Cliente cli) {
 		this.cli = cli;
+	}
+	
+	public boolean isCampo() {
+		return campo;
+	}
+
+	public void setCampo(boolean campo) {
+		this.campo = campo;
 	}
 
 	public ClienteMB() {
@@ -39,17 +43,11 @@ public class ClienteMB implements Serializable {
 		return cliente;
 	}
 
-	public void setCliente(Cliente cf) {
-		this.cliente = cf;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 	
-	public boolean isCampo() {
-		return campo;
-	}
-
-	public void setCampo(boolean campo) {
-		this.campo = campo;
-	}
+	
 	
 	public void inserir() {
 		getCliente().setIsGrafica(0);
