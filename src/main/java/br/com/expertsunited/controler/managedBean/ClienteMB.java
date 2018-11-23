@@ -65,7 +65,7 @@ public class ClienteMB implements Serializable {
 	public void editarCliente() {
 		ClienteFachada fachada = new ClienteFachada();
 		try {
-			fachada.updateCF(cli);
+			fachada.updateCliente(cli);
 		}catch(Exception e) {
 			e.getMessage();
 		}

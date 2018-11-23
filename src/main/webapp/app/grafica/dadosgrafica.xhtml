@@ -14,7 +14,7 @@
 </h:head>
 
 <ui:insert xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-	<ui:include src="/includes/header-cliente.xhtml"/>
+	<ui:include src="/includes/header-grafica.xhtml"/>
 </ui:insert>
 
 <h:body class="view-app">
@@ -22,7 +22,7 @@
 		<div class="row">
 			<div class="col-2">
 				<ui:insert xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-					<ui:include src="/includes/menu-cliente.xhtml"/>
+					<ui:include src="/includes/menu-grafica.xhtml"/>
 				</ui:insert>
 			</div>
 			<div class="col-10">
@@ -33,18 +33,18 @@
 						<div class="col-5">
 							<div class="row">
 								<div class="col-12 d-flex justify-content-end">
-									<h:commandButton value="Editar dados" styleClass="btn btn-outline-primary btn-sm" action="#{clienteMB.desbloquearCampo}"/>
+									<h:commandButton value="Editar dados" styleClass="btn btn-outline-primary btn-sm" action="#{graficaMB.desbloquearCampo}"/>
 								</div>
 								<div class="col-12">
 									<div class="form-group">
 										<h:outputLabel for="nome" value="Nome"/>
-										<h:inputText id="nome" styleClass="form-control" value="#{loginMB.cliente.nome}" disabled="#{clienteMB.campo}"/>
+										<h:inputText id="nome" styleClass="form-control" value="#{loginMB.grafica.nome}" disabled="#{graficaMB.campo}"/>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group">
 										<h:outputLabel for="email" value="Email"/>
-										<h:inputText id="email" styleClass="form-control" value="#{loginMB.cliente.email}" disabled="#{clienteMB.campo}"/>
+										<h:inputText id="email" styleClass="form-control" value="#{loginMB.grafica.email}" disabled="#{graficaMB.campo}"/>
 									</div>
 								</div>
 							</div>
@@ -52,13 +52,13 @@
 								<div class="col-6">
 									<div class="form-group">
 										<h:outputLabel for="telefone" value="Telefone"/>
-										<h:inputText id="telefone" styleClass="form-control" value="#{loginMB.cliente.telefone}" disabled="#{clienteMB.campo}"/>
+										<h:inputText id="telefone" styleClass="form-control" value="#{loginMB.grafica.telefone}" disabled="#{graficaMB.campo}"/>
 									</div>
 								</div>
 								<div class="col-6">
 									<div class="form-group">
 										<h:outputLabel for="cnpj" value="CNPJ"/>
-										<h:inputText id="cnpj" styleClass="form-control" value="#{loginMB.cliente.cnpj}" disabled="#{clienteMB.campo}"/>
+										<h:inputText id="cnpj" styleClass="form-control" value="#{loginMB.grafica.cnpj}" disabled="#{graficaMB.campo}"/>
 									</div>
 								</div>
 							</div>
@@ -66,19 +66,19 @@
 								<div class="col-12">
 									<div class="form-group">
 										<h:outputLabel for="login" value="Login"/>
-										<h:inputText id="login" styleClass="form-control" value="#{loginMB.cliente.login}" disabled="#{clienteMB.campo}"/>
+										<h:inputText id="login" styleClass="form-control" value="#{loginMB.grafica.login}" disabled="#{graficaMB.campo}"/>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group">
 										<h:outputLabel for="senha" value="Senha"/>
-										<h:inputText id="senha" styleClass="form-control" value="#{loginMB.cliente.senha}" disabled="#{clienteMB.campo}"/>
+										<h:inputText id="senha" styleClass="form-control" value="#{loginMB.grafica.senha}" disabled="#{graficaMB.campo}"/>
 									</div>
 								</div>
 							</div>
 							<div class="row justify-content-end">
 								<div class="col-5">
-									<h:commandButton value="Atualizar Dados" styleClass="btn btn-primary w-100" />
+									<h:commandButton value="Atualizar Dados" styleClass="btn btn-primary w-100" action="#{graficaMB.editarGrafica}"/>
 								</div>
 							</div>
 						</div>

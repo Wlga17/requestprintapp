@@ -30,7 +30,7 @@ public class ClienteFachada {
      * @param cliente Dados do Cliente
      * @throws Exception
      */
-	public void updateCF(Cliente cliente) throws Exception {
+	public void updateCliente(Cliente cliente) throws Exception {
 		cliNeg.alterarCliente(cliente);
 	}
 	
