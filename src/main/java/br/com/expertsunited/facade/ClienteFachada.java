@@ -49,7 +49,7 @@ public class ClienteFachada {
      * @return O Cliente encontrado ou NULL
      * @throws Exception
      */
-	public Cliente getByIdCF(int id) throws Exception {
+	public Cliente getByIdCliente(int id) throws Exception {
 		return cliNeg.buscarPorId(id);
 	}
 	

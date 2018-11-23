@@ -1,33 +1,40 @@
 package br.com.expertsunited.controler.managedBean;
 
-import java.util.List;
+import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 
 import br.com.expertsunited.facade.ClienteFachada;
 import br.com.expertsunited.model.entity.Cliente;
 
-@ManagedBean()
-public class clienteMB {
+@ManagedBean
+@SessionScoped
+public class ClienteMB implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+	private Cliente cliente;
+	private boolean campo;
+	@ManagedProperty(value="#{loginMB.cliente}")
+	private Cliente cli;
+	
+	
+	
 
-	Cliente cliente = new Cliente();
-	
-	boolean campo = true;
-	
-	public boolean isCampo() {
-		return campo;
+
+	public Cliente getCli() {
+		return cli;
 	}
 
-	public void setCampo(boolean campo) {
-		this.campo = campo;
-	}
-	List<Cliente> listaCliente;
-	
-	
-	public clienteMB() {
-		// TODO Auto-generated constructor stub
+	public void setCli(Cliente cli) {
+		this.cli = cli;
 	}
 
+	public ClienteMB() {
+		cliente = new Cliente();
+	}
+	
 	public Cliente getCliente() {
 		return cliente;
 	}
@@ -35,13 +42,13 @@ public class clienteMB {
 	public void setCliente(Cliente cf) {
 		this.cliente = cf;
 	}
-
-	public List<Cliente> getListaCliente() {
-		return listaCliente;
+	
+	public boolean isCampo() {
+		return campo;
 	}
 
-	public void setListaCliente(List<Cliente> listaCliente) {
-		this.listaCliente = listaCliente;
+	public void setCampo(boolean campo) {
+		this.campo = campo;
 	}
 	
 	public void inserir() {
@@ -56,14 +63,16 @@ public class clienteMB {
 			}
 		}
 	}
-	public void alterar() {
+	
+	public void editarCliente() {
 		ClienteFachada fachada = new ClienteFachada();
 		try {
-			fachada.updateCF(cliente);
+			fachada.updateCF(cli);
 		}catch(Exception e) {
 			e.getMessage();
 		}
 	}
+	
 	public void desbloquearCampo() {
 		this.campo = false;
 	}

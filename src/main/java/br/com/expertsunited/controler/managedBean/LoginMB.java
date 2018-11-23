@@ -65,7 +65,7 @@ public class LoginMB implements Serializable {
 				grafica = (Grafica) graficaFach.getByIdGrafica(usuario.getIdUsuario());
 				return "/app/grafica/index?faces-redirect=true";
 			} else {
-				cliente = (Cliente) clienteFach.getByIdCF(usuario.getIdUsuario());
+				cliente = (Cliente) clienteFach.getByIdCliente(usuario.getIdUsuario());
 				return "/app/cliente/index?faces-redirect=true";
 			}
 		} else {

@@ -44,7 +44,7 @@
 						<h:outputLabel for="solicitacao" value="Solicitação: "/>
 						<h:selectOneMenu id="solicitacao" value="#{propostaMB.proposta.solicitacao}" converter="solicitacaoConverter">
 							<f:selectItem itemLabel="-- Solicitações --" noSelectionOption="true"/>
-							<f:selectItems	value="#{propostaMB.sols}" var="solicitacao"
+							<f:selectItems	value="#{SolicitacaoMB.sols}" var="solicitacao"
 								itemValue="#{solicitacao}"	itemLabel="#{solicitacao.titulo}"/>
 						</h:selectOneMenu> 
 						<br></br>

@@ -29,24 +29,28 @@
 				<h:form>
 					<h:inputHidden value="#{loginMB.login.idUsuario}"></h:inputHidden>
 					<p>#{loginMB.cliente.nome}</p>
+					<p>#{loginMB.cliente.email}</p>
+					<p>#{loginMB.cliente.telefone}</p>
+					<p>#{loginMB.cliente.cnpj}</p>
+					<p>#{loginMB.cliente.idUsuario}</p>
 					<h:outputLabel for="alterarNome" value="Altere seu nome"/>
-					<h:inputText id="alterarNome" value="#{clienteMB.cliente.nome}" disabled="#{clienteMB.campo}"/><br/>
+					<h:inputText id="alterarNome" value="#{loginMB.cliente.nome}" disabled="#{clienteMB.campo}"/><br/>
 					<br/>
 					
 					<h:outputLabel for="alterarTelefone" value="Altere seu telefone"/>
-					<h:inputText id="telefone" value="#{clienteMB.cliente.telefone}" disabled="#{clienteMB.campo}"/><br/>
+					<h:inputText id="alterarTelefone" value="#{loginMB.cliente.telefone}" disabled="#{clienteMB.campo}"/><br/>
 					<br/>
 					
 					<h:outputLabel for="alterarEmail" value="Altere seu email"/>
-					<h:inputText id="email" value="#{clienteMB.cliente.email}" disabled="#{clienteMB.campo}"/><br/>
+					<h:inputText id="alterarEmail" value="#{loginMB.cliente.email}" disabled="#{clienteMB.campo}"/><br/>
 					<br/>
 			
 					<h:outputLabel for="alterarCnpj" value="Altere seu cnpj"/>
-					<h:inputText id="cnpj" value="#{clienteMB.cliente.cnpj}" disabled="#{clienteMB.campo}"/><br/>
+					<h:inputText id="alterarCnpj" value="#{loginMB.cliente.cnpj}" disabled="#{clienteMB.campo}"/><br/>
 					<br/>
 					
-					<h:commandButton value = "Alterar" action = "#{clienteMB.desbloquearCampo}"/>
-					<h:commandButton value = "Finalizar Alteracao" action = "#{clienteMB.alterar}"/>
+					<h:commandButton value="Alterar" action="#{clienteMB.desbloquearCampo}"/>
+					<h:commandButton value="Finalizar Alteracao" action="#{clienteMB.editarCliente}"/>
 				</h:form>
 			</div>
 		</div>
