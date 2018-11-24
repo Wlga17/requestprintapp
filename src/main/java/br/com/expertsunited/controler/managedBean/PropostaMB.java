@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 //import javax.faces.model.SelectItem;
+import javax.faces.bean.SessionScoped;
 
 import br.com.expertsunited.facade.GraficaFachada;
 import br.com.expertsunited.facade.PropostaFachada;
@@ -14,13 +15,13 @@ import br.com.expertsunited.model.entity.Proposta;
 import br.com.expertsunited.model.entity.Solicitacao;
 
 @ManagedBean()
+@SessionScoped
 public class PropostaMB implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private Proposta proposta;
 	private List<Proposta> props;
 	private List<Grafica> grafs;
-	//private List<Solicitacao> sols;
 	
 	public PropostaMB() {
 		proposta = new Proposta();
@@ -61,21 +62,7 @@ public class PropostaMB implements Serializable{
 	public void setGrafs(List<Grafica> grafs) {
 		this.grafs = grafs;
 	}
-	/*
-	public List<Solicitacao> getSols() {
-		SolicitacaoFachada fs = new SolicitacaoFachada();
-		try {
-			sols = fs.getListSolicitacao();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return sols;
-	}
 
-	public void setSols(List<Solicitacao> sols) {
-		this.sols = sols;
-	}
-	*/
 	public void inserir() {
 		if(this.proposta != null) {
 			PropostaFachada fachada = new PropostaFachada(); 

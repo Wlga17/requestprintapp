@@ -19,27 +19,27 @@ public class ClienteNegocio {
 	}
 	
 	public void validarNuloCF(Cliente cliente) throws Exception{
-//		if(cliente == null) {
-//			throw new Exception("Cliente não instanciado!");
-//		}
-//		if(cliente.getNome().equals("") == true || cliente.getNome() == null) {
-//			throw new Exception("Nome do cliente em branco");
-//		}
-//		if(cliente.getCpf().equals("") == true || cliente.getCpf() == null) {
-//			throw new Exception("Cpf do cliente em branco");
-//		}
-//		if(cliente.getEmail().equals("") == true || cliente.getEmail() == null) {
-//			throw new Exception("Email do cliente em branco");
-//		}
-//		if(cliente.getTelefone().equals("") == true || cliente.getTelefone() == null) {
-//			throw new Exception("Telefone do cliente em branco");
-//		}
-//		if(cliente.getLogin().equals("") == true || cliente.getLogin() == null) {
-//			throw new Exception("Login do cliente em branco");
-//		}
-//		if(cliente.getSenha().equals("") == true || cliente.getSenha() == null) {
-//			throw new Exception("Senha do cliente em branco");
-//		}
+		if(cliente == null) {
+			throw new Exception("Cliente não instanciado!");
+		}
+		if(cliente.getNome().equals("") == true || cliente.getNome() == null) {
+			throw new Exception("Nome do cliente em branco");
+		}
+		if(cliente.getCnpj().equals("") == true || cliente.getCnpj() == null) {
+			throw new Exception("Cpf do cliente em branco");
+		}
+		if(cliente.getEmail().equals("") == true || cliente.getEmail() == null) {
+			throw new Exception("Email do cliente em branco");
+		}
+		if(cliente.getTelefone().equals("") == true || cliente.getTelefone() == null) {
+			throw new Exception("Telefone do cliente em branco");
+		}
+		if(cliente.getLogin().equals("") == true || cliente.getLogin() == null) {
+			throw new Exception("Login do cliente em branco");
+		}
+		if(cliente.getSenha().equals("") == true || cliente.getSenha() == null) {
+			throw new Exception("Senha do cliente em branco");
+		}
 	}
 		
 	public void inserirCliente(Cliente cliente, AjaxBehaviorEvent event) throws Exception{

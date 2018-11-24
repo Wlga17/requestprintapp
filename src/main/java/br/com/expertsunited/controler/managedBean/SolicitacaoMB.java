@@ -52,7 +52,7 @@ public class SolicitacaoMB implements Serializable{
 		}
 	}
 	
-	public String fazerProposta() throws Exception{
+	public String fazerProposta(Solicitacao solicitacao) throws Exception{
 		return "/app/grafica/proposta?faces-redirect=true";
 	}
 

@@ -23,7 +23,7 @@ public class ClienteFachada {
      * @throws Exception
      */
 	public void createCF(Cliente cliente, AjaxBehaviorEvent event) throws Exception {
-		//cliNeg.validarNuloCF(cliente);
+		cliNeg.validarNuloCF(cliente);
 		cliNeg.inserirCliente(cliente, event);
 	}
 	

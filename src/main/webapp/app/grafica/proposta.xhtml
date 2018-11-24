@@ -13,7 +13,7 @@
 </h:head>
 
 <ui:insert xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-	<ui:include src="/includes/header-cliente.xhtml"/>
+	<ui:include src="/includes/header-grafica.xhtml"/>
 </ui:insert>
 
 <h:body class="view-app">
@@ -25,32 +25,55 @@
 				</ui:insert>
 			</div>
 			<div class="col-10">
-				<h1>Cadastrar Proposta</h1>
-				<h:form>
-					<h:panelGrid columns="2">
-						<h:outputLabel for="data" value="Data da Propota: "/>
-						<h:inputText id="data" value="#{propostaMB.proposta.dataProposta}"/>
-						
-						<h:outputLabel for="descricao" value="Descrição: "/>
-						<h:inputTextarea id="descricao" rows="5" cols="21" value="#{propostaMB.proposta.descricao}"/>
-						
-						<h:outputLabel for="grafica" value="Grafica: "/>
-						<h:selectOneMenu id="grafica" value="#{propostaMB.proposta.grafica}" converter="graficaConverter">
-							<f:selectItem itemLabel="-- Graficas --" noSelectionOption="true"/>
-							<f:selectItems value="#{propostaMB.grafs}" var="grafica"
-								itemValue="#{grafica}" itemLabel="#{grafica.nome}"/>			
-						</h:selectOneMenu>
-						
-						<h:outputLabel for="solicitacao" value="Solicitação: "/>
-						<h:selectOneMenu id="solicitacao" value="#{propostaMB.proposta.solicitacao}" converter="solicitacaoConverter">
-							<f:selectItem itemLabel="-- Solicitações --" noSelectionOption="true"/>
-							<f:selectItems	value="#{SolicitacaoMB.sols}" var="solicitacao"
-								itemValue="#{solicitacao}"	itemLabel="#{solicitacao.titulo}"/>
-						</h:selectOneMenu> 
-						<br></br>
-						<br></br>
-						<h:commandButton value="Enviar Proposta" action="#{propostaMB.inserir}"/>
-					</h:panelGrid>
+				<h1 class="display-4 text-uppercase mt-3 mb-4">Nova Proposta</h1>
+				<h:form>  
+					
+					<div class="row">
+						<div class="col-3">
+							<div class="form-group">
+								<h:outputLabel for="grafica" value="Grafica: "/>
+								<h:selectOneMenu id="grafica" styleClass="custom-select" value="#{propostaMB.proposta.grafica}" converter="graficaConverter">
+									<f:selectItem itemLabel="  Graficas  " noSelectionOption="true"/>
+									<f:selectItems value="#{propostaMB.grafs}" var="grafica"
+										itemValue="#{grafica}" itemLabel="#{grafica.nome}"/>			
+								</h:selectOneMenu>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="form-group">
+								<h:outputLabel for="solicitacao" value="Solicitação: "/>
+								<h:selectOneMenu id="solicitacao" styleClass="custom-select" value="#{propostaMB.proposta.solicitacao}" converter="solicitacaoConverter">
+									<f:selectItem itemLabel=" Solicitações " noSelectionOption="true"/>
+									<f:selectItems	value="#{SolicitacaoMB.sols}" var="solicitacao"
+										itemValue="#{solicitacao}"	itemLabel="#{solicitacao.titulo}"/>
+								</h:selectOneMenu>
+							</div> 
+						</div>
+						<div class="col-2">
+							<div class="form-group">
+								<h:outputLabel for="data" value="Data da Proposta"/>
+								<h:inputText id="data" styleClass="form-control" value="#{propostaMB.proposta.dataProposta}"/>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-10">
+							<div class="form-group mt-4">
+								<h:outputLabel for="descricao"  value="Informe aqui os materias e respectivos valores"/>
+								<h:inputTextarea id="descricao" styleClass="form-control" rows="8" value="#{propostaMB.proposta.descricao}"/>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-10">
+							<div class="row justify-content-end">
+								<div class="col-3 mt-4">
+									<h:commandButton value="Enviar Proposta" styleClass="btn btn-primary w-100" action="#{propostaMB.inserir}"/>
+								</div>
+							</div>
+						</div>
+					</div>
 				</h:form>
 			</div>
 		</div>
